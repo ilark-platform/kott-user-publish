@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>회원탈퇴</title>
+    <link rel="stylesheet" href="assets/css/common.css">
+</head>
+
+<body>
+    <div class="app-wrap">
+        <header class="header">
+            <div class="header__button">
+                <a href="login.html" class="h-btn"><i class="icon arrow-left"></i></a>
+            </div>
+            <div class="header__title">회원탈퇴</div>   
+            <div class="header__drawer-trigger js-drawer-trigger">
+                <div class="burger burger--menu">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </div>
+            </div>
+        </header>
+        <main class="views-wrap">
+            <section class="section">
+                <div class="section__inner">
+                    <h2 class="section__title">회원탈퇴</h2>
+                    <div class="text-box mt6">
+                        <p>회원 탈퇴시 모든 구독권이 취소되며 남은 기간에 대한 환불은 진행되지 않습니다. 또한 완전한 탈퇴까지 최대 72시간이 소요될 수 있으며, 회원탈퇴는 취소할 수 없습니다.</p>
+                    </div>
+                    <form class="form">
+                        <fieldset>
+                            <div class="field-group">
+                                <label for="password" class="field-group__label">비밀번호 확인</label>
+                                <div class="field-group__cont">
+                                    <input type="password" name="password" class="field-group__input" placeholder="현재 비밀번호를 입력해주세요">
+                                    <button type="button" class="field-group__btn js-pwToggle">Show</button>
+                                </div>
+                                <span class="field-group__help field-group__help--error"">비밀번호를 잘못 입력하셨습니다.</span>
+                            </div>
+                            <div class="field-group mt16">
+                                <!-- 비밀번호 확인시 btn--primary 클래스 추가 -->
+                                <button class="btn btn--full" type="submit">회원탈퇴</button>
+                            </div>
+                        </fieldset>    
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div> 
+
+    <script src="assets/js/function.js"></script>
+</body>
+</html>
