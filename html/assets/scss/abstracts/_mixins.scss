@@ -1,0 +1,172 @@
+/* color style */
+$color-primary: #caa973;
+$color-secondary: #D7007F;
+$color-black-100: #121215;
+$color-black-200: #1d1d22;
+$color-bline-100: #252529;
+$color-white: #ffffff;
+$color-red: #f41e1e;
+$color-gray-100: #202022;
+$color-gray-200: #252529;
+$color-gray-300: #46464c;
+$color-gray-400: #515158;
+$color-gray-500: #696971;
+$color-gray-600: #969696;
+$color-gray-700: #b6b6b6;
+$color-gray-800: #dbdbdb;
+$color-gray-900: #e2e2e2;
+
+
+/* border, box-shadow style */
+$border: 1px solid rgba($color-gray-200, 1);
+$border-input: 1px solid rgba($color-primary, 0.6);
+$border-radius: 2.2222vw;
+$box-shadow: 0 5px 20px rgba($color-black-100, 0.2);
+$box-shadow-input: 0 3px 10px rgba($color-black-100, 0.1);
+
+
+/* ------------------------------ Position & Size ------------------------------ */
+@mixin position($position, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin size($width, $height: auto) {
+  width: $width;
+  height: $height;
+}
+
+
+/* ------------------------------ TYPOGRAPHY ------------------------------ */
+@mixin font-size($sizeValue: 13, $heightValue: 15, $weightValue: 400){
+	font-size: (0.1 * $sizeValue) + rem;
+	line-height: (0.1 * $heightValue);
+	font-weight: $weightValue;
+}
+
+
+/* ------------------------------ BUTTON ------------------------------ */
+$button-border-radius: 2.2222vw;
+$button-font-size: 1.6rem;
+$button-padding: 0.875em 2em;
+
+$button-base-color: $color-white;
+$button-base-bg: #343437;
+$button-primary-bg: $color-primary;
+
+// --- button mixins ------------------------------------------------------------------
+@mixin bem-button($name, $bg, $color) {
+	.btn--#{$name} {
+		background-color: $bg;
+    	border-color: $bg;
+		color: $color;
+		@include bem-button-hover($bg);
+	}
+}
+
+@mixin bem-button-hover($bg) {
+	&:hover {
+		background-color: lighten($bg, 5%);
+	}
+}
+
+@mixin bem-button-size($name, $font-size) {
+	.btn--#{$name} {
+		font-size: $font-size;
+	}
+}
+
+@mixin bem-button-bordered($name, $bgcolor, $color) {
+	.btn--bordered-#{$name} {
+		background: $color-black-100;
+		border-color: $bgcolor;
+		color: $color;
+
+		&:hover {
+			background: $button-base-bg;
+			color: darken($color, 10%);
+			border-color: darken($bgcolor, 10%);
+		}
+	}
+}
+
+
+/* ------------------------------ ICON ------------------------------ */
+$icon-primary: $color-primary;
+$icon-white: $color-white;
+$icon-gray: $color-gray-600;
+
+@function icon($iconName, $color:ffffff) {
+  $iconList: ( 
+    close: "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-width='24' stroke-linecap='round' stroke-linejoin='round' d='M368,368L144,144 M368,144 L144,368'/%3E%3C/svg%3E",
+	arrow-left: "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-width='24' stroke-linecap='round' stroke-linejoin='round' d='M328 112L184 256l144 144'/%3E%3C/svg%3E",
+	arrow-right: "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-width='24' stroke-linecap='round' stroke-linejoin='round' d='M184 112l144 144-144 144'/%3E%3C/svg%3E",
+	arrow-up: "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-width='24' stroke-linecap='round' stroke-linejoin='round' d='M112 328l144-144 144 144'/%3E%3C/svg%3E",
+	arrow-down: "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-width='24' stroke-linecap='round' stroke-linejoin='round' d='M112 184l144 144 144-144'/%3E%3C/svg%3E",
+	search: "%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z' fill='none' stroke='%23#{$color}' stroke-width='24'%3E%3C/path%3E%3Cpath fill='none' stroke='%23#{$color}' stroke-linecap='round' stroke-width='24' d='M338.29 338.29L448 448'/%3E%3C/svg%3E",
+    
+  );
+  $icon: map-get($iconList, $iconName);
+  @return url("data:image/svg+xml;charset=utf8,#{$icon}");
+}
+
+
+/* ------------------------------ Margin & Padding ------------------------------ */
+$sizes: 16;
+@mixin margin-classes {
+  @for $i from 1 through $sizes {
+     $margin: $i * 4px;
+    /* margin #{$margin} */
+    .m#{$i}  {margin: $margin;}
+    .ml#{$i} {margin-left: $margin;}
+    .mr#{$i} {margin-right: $margin;}
+    .mt#{$i} {margin-top: $margin;}
+    .mb#{$i} {margin-bottom: $margin;}
+    .mx#{$i} {margin-left: $margin; margin-right: $margin;}
+    .my#{$i} {margin-top: $margin; margin-bottom: $margin;}
+  }
+}
+@mixin padding-classes {
+  @for $i from 1 through $sizes {
+    $padding: $i * 4px;
+    /* padding #{$padding} */
+    .p#{$i} {padding: $padding;}
+    .pl#{$i} {padding-left: $padding;}
+    .pr#{$i} {padding-right: $padding;}
+    .pt#{$i} {padding-top: $padding;}
+    .pb#{$i} {padding-bottom: $padding;}
+    .px#{$i} {padding-left: $padding; padding-right: $padding;}
+    .py#{$i} {padding-top: $padding; padding-bottom: $padding;}
+  }
+}
+
+
+
+/* 반응형 화면 크기 */
+$desktop: 1024px;
+$tablet: 1023px;
+$mobile: 767px;
+
+/* 반응형, 브라우저 크기가 1024px 이상일때 */
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+/* 반응형, 브라우저 크기가 1023px 이하일때 */
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+/* 반응형, 브라우저 크기가 767px 이하일때 */
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}

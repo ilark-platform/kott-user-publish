@@ -1,0 +1,630 @@
+@import '../abstracts/mixins';
+/* ------------------------------ Text Box ------------------------------ */
+.text-box {
+  
+  &.rounded {
+    padding: 2rem;
+    background-color: $color-gray-100;
+    border-radius: $border-radius;
+  }
+
+  p {
+    @include font-size(13, 16);
+    color: rgba($color-white, 0.6);
+
+    &.text-center {
+      text-align: center;
+    }
+
+    span {
+      display: inline-block;
+      color: $color-white;
+    }
+  }
+}
+
+/*
+.btn-group {
+  display: flex;
+  justify-content: space-around;
+}
+*/
+
+
+/* ------------------------------ FORM ------------------------------ */
+.form {
+  display: block;
+  width: 100%;
+}
+
+.field-group {
+  position: relative;
+  width: 100%;
+  margin-top: 2.4rem;
+  
+  &--half {
+    width: calc(50% - 1.2rem);
+  }
+
+  &__label {
+    display: block;
+    @include font-size(14, 14, 500);
+    color: $color-gray-500;
+    margin-bottom: 8px;
+
+    &--blind {
+      display: none;
+    }
+
+    & .icon-required {
+      display: inline-block;
+      padding-left: 3px;
+      color: $color-red;
+      font-size: 1.2rem;
+      vertical-align: top;
+    }
+  }
+
+  &__cont {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid $color-gray-100;
+    background-color: $color-gray-100;
+    border-radius: $border-radius; 
+    transition: all 0.3s; 
+    
+    &--invalid {
+      border-color: $color-red;
+    }
+
+    &--disabled, &:disabled {
+      border: 1px solid $color-gray-300;
+      background-color: $color-gray-300;
+		  cursor: not-allowed;
+    }
+
+    &:focus-within {
+      border-color: $color-gray-200;
+      background-color: $color-gray-200;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: $color-gray-500;
+    padding: 1.4rem 1rem;
+    transition: all 0.3s;
+    z-index: 2; 
+
+    &.expanded {
+      color: $color-primary;
+    }
+  }
+
+  &__input, &__textarea {
+    position: relative;
+    width: 100%;
+    font-size: 1.4rem;
+    padding: 1.4rem;
+    color: $color-white;
+    outline: 0;
+  }
+
+  &__textarea {
+    height: 118px;
+  }
+
+  &__help {
+    display: block;
+    margin-top: 5px;
+    color: $color-gray-500;
+    font-size: 1.2rem;
+    text-align: right;
+
+    &--error {
+      color: $color-red;  
+    }
+  }
+
+  // --- 주소지 검색 필드만 사용 ------------------------------------------------------------------
+  .field-address {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  .field-address .field-group__input {
+    margin-left: 6px;
+    width: calc(100% - 98px);
+  }
+  .field-address .btn {
+    font-size: 1.4rem;
+    width: 98px;
+    height: 50px;
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .field-address ~ .field-group__input {
+    margin-top: 6px;
+  }
+  
+  .text-box {
+    p {
+      @include font-size(12, 15);
+      color: rgba($color-white, 0.4);
+    }
+  }
+}
+
+
+/* ------------------------------ CUSTOM CHECKBOX ------------------------------ */
+.checkbox {
+  position: relative;
+  margin-bottom: 1.6rem;
+
+  &__wrapper {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 34px;
+    height: 24px;
+  }
+
+  &__title {
+    display: inline-block;
+    @include font-size(13, 15, 400);
+    color: $color-gray-700;
+    vertical-align: middle;
+
+    &--large {
+      @include font-size(16, 16, 500);
+      color: $color-white;
+    }
+  }
+
+  &__link {
+    @include position(absolute, $top: 50%, $right: 0);
+    @include font-size(13, 15, 400);
+    color: $color-gray-600;
+    padding: 0 5px;
+    z-index: 2;
+    transform: translateY(-50%);
+  }
+  
+  &--hidden {
+    display: none;
+    
+    &:checked {
+      display: block;
+    }
+  }
+  
+  &--show {
+    @include position(absolute, $top: 2px, $left: 0);
+    height: 22px;
+    width: 22px;
+    border: 1px solid $color-gray-400;
+    border-radius: 50%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 4px;
+      width: 4px;
+      height: 8px;
+      border: solid $color-gray-300;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }  
+  }
+
+  &--hidden:checked ~ &--show:after {
+    display: block;
+  }
+
+  &--primary {
+    &:checked ~ .checkbox--show {
+      background-color: $color-primary;
+      border-color: $color-primary;
+
+      &::after {
+        border-color: $color-white; 
+      }
+    }
+    &:disabled ~ .checkbox--show {
+      background-color: $color-white;
+      //border: 1px solid $grey-100;
+      cursor: not-allowed;
+    }
+    &:checked:disabled ~ .checkbox--show {
+      background-color: $color-primary;
+      opacity: 0.6;
+      cursor: not-allowed;
+
+      &::after {
+        border-color: $color-white; 
+      }
+    }
+    
+  }
+}
+
+/* ------------------------------ CUSTOM RADIO ------------------------------ */
+.radiobox {
+  position: relative;
+  margin-bottom: 1.4rem;
+
+  &__wrapper {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 34px;
+    height: 24px;
+  }
+
+  &__title {
+    display: inline-block;
+    font-size: 1.3rem;
+    color: $color-gray-700;
+    vertical-align: middle;
+
+    &--large {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: $color-black-100;
+    }
+  }
+  
+  &--hidden {
+    display: none;
+    
+    &:checked {
+      display: block;
+    }
+  }
+  
+  &--show {
+    @include position(absolute, $top: 0, $left: 0);
+    height: 22px;
+    width: 22px;
+    border: 1px solid $color-gray-400;
+    border-radius: 50%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 3px;
+      top: 3px;
+      width: 14px;
+      height: 14px;
+      background-color: transparent;
+      border-radius: 100%;
+      transform: scale(0);
+      transition: all 0.2s ease;
+    }  
+  }
+
+  &--hidden:checked ~ &--show:after {
+    display: block;
+  }
+
+  &--primary {
+    &:checked ~ .radiobox--show {
+      border-color: $color-primary;
+
+      &::after {
+        background-color: $color-primary;
+        transform: scale(1);
+      }
+    }
+    &:disabled ~ .radiobox--show {
+      background-color: $color-gray-200;
+      //border: 1px solid $grey-100;
+      cursor: not-allowed;
+    }
+    &:checked:disabled ~ .radiobox--show {
+      background-color: $color-primary;
+      opacity: 0.6;
+      cursor: not-allowed;
+
+      &::after {
+        border-color: $color-white; 
+      }
+    }
+    
+  }
+}
+
+
+/* ------------------------------ CUSTOM SELECT ------------------------------ */
+.select-dropdown {
+  width: 100%;
+  min-width: 124px;
+
+  &__inner {
+    position: relative;
+    height: 50px;
+    border: 1px solid $color-gray-100;
+    background-color: $color-gray-100;
+    border-radius: $border-radius; 
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s;  
+
+    &.expanded {
+      background-color: $color-white;
+      border-color: $color-primary;
+
+      .select-dropdown__arrow {
+        margin-top: 4px;
+        transform: rotateZ(45deg);
+      }
+
+      .select-dropdown__list {
+        max-height: 288px; 
+      }
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    right: 20px;
+    top: 38%;
+    width: 10px;
+    height: 10px;
+    border-left: 1px solid $color-gray-500;
+    border-top: 1px solid $color-gray-500;
+    transform: rotateZ(-135deg);
+    transition: .2s ease-in;
+    pointer-events: none;
+  }
+  
+  &__label {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+    padding: 1.6rem;
+    color: $color-black-100;
+    margin-bottom: 2px;
+  }
+  
+  &__list {
+    position: absolute;
+    width: 100%;
+    font-size: 1.4rem;
+    border-radius: $border-radius;  
+    background-color: #575757;
+    box-shadow: $box-shadow;
+    overflow-y: auto;
+    z-index: 2;
+    max-height: 0;
+    transition: .2s ease-in;
+    
+    &::-webkit-scrollbar { width: 6px; }
+    &::-webkit-scrollbar-track { background: transparent; }
+    &::-webkit-scrollbar-thumb { background: #212121; border-radius: 6px; }
+    &::-webkit-scrollbar-thumb:hover { background: #212121; }
+  }
+
+  &__item {
+    padding: 1.4rem 1.4rem;
+    color: $color-white;
+    border-bottom: 1px dashed #4e4e4e;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: #414141;
+    }    
+  }
+
+  &--flat {
+    width: auto;
+    min-width: auto;
+
+    .select-dropdown__inner {
+      height: auto;
+      border: none;
+      background-color: transparent;
+  
+      &.expanded {
+        background-color: transparent;
+      }
+    }
+
+    .select-dropdown__arrow {
+      right: 0;
+      top: 35%;
+    }
+
+    .select-dropdown__label {
+      font-size: 1.8rem;
+      padding: 1rem 1.2rem;
+      padding-right: 2.4rem;
+      height: 40px;
+    }
+
+    .select-dropdown__item {
+      padding: 1rem 1.2rem;
+    }
+  }
+
+  @include mobile { 
+    /*브라우저 사이즈 767px 이하일때*/
+
+    &--flat {
+      .select-dropdown__arrow {
+        right: 0;
+        top: 30%;
+      }
+  
+      /*
+      .select-dropdown__label {
+        font-size: 1.6rem;
+      }
+      */
+    }    
+  }
+}
+
+
+/* ------------------------------ BUTTON ------------------------------ */
+// --- button ---------------------------------------------------------
+.btn {
+	color: $button-base-color;  
+	background-color: $button-base-bg;
+  padding: $button-padding;
+	display: inline-block;
+	text-decoration: none;
+	border-radius: $button-border-radius;
+  border: 1px solid $button-base-bg;
+	font-size: $button-font-size;
+  line-height: 1.4;
+  text-align: center;
+	vertical-align: top;
+	cursor: pointer;
+	transition: background-color .2s, color .2s, border-color .2s;
+	@include bem-button-hover($button-base-bg);
+
+  &--full {
+    width: 100%;
+  }
+
+	&.is-disabled {
+    background-color: $color-gray-100;
+    color: $color-gray-300;
+		cursor: not-allowed;
+    pointer-events: none;
+	}
+
+  & > i {
+    display: inline-block;
+  }
+}
+
+// --- button: sizes ---------------------------------------------------------
+@include bem-button-size('small', 1.2rem);
+@include bem-button-size('large', 1.8rem);
+
+// --- button: variants ---------------------------------------------------------
+@include bem-button('primary', $button-primary-bg, $button-base-bg);
+
+// --- button: bordered ---------------------------------------------------------
+@include bem-button-bordered('base', $color-gray-300, $button-base-color);
+@include bem-button-bordered('primary', $button-primary-bg, $button-primary-bg);
+
+
+.textbtn {
+  display: block;
+  @include font-size(12, 15, 500);
+  color: $color-gray-600;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+
+/* ------------------------------ MODAL ------------------------------ */
+.modal {
+  @include position(fixed, $top: 0, $left: 0);
+  @include size(100%, $height: 100%);
+  background: rgba(0, 0, 0, 0.7);
+  overflow-y: auto;
+  z-index: 200;
+  transition: opacity .3s ease;
+
+  &__close {
+    @include position(absolute, $top: 10px, $right: 6px);
+    color: $color-black-100;
+    z-index: 3;
+  }
+  
+  &__wrapper {
+    @include position(relative, $top: 50%, $left: 50%);
+    padding: 0 2rem;
+    transform: translate(-50%, -50%);
+  }
+
+  &__container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    background-color: $color-black-200;
+    transition: all .3s ease;
+
+    &--large {
+      max-width: 800px;
+    }
+
+    &--small {
+      max-width: 300px;
+    }
+  }
+
+  &__description {
+    @include font-size(13, 15, 400);
+    margin-top: 1rem;
+  }
+
+  &__header {
+    position: relative;
+    @include font-size(18, 12, 700);
+    text-align: center;
+
+    &--text-left {
+      text-align: left;
+    }
+  }
+
+  &__body {
+    padding: 2rem 0;
+    @include font-size(13, 15, 400);
+    color: $color-gray-700;
+    text-align: center;
+
+    &--text-left {
+      text-align: left;
+    }
+
+    & .terms-box {
+      @include font-size(13, 15, 400);
+      max-height: 50vh;
+      overflow-y: auto;
+    }
+  }
+  
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    //margin-top: 15px;
+    
+    .btn + .btn {
+      margin-left: 6px;
+    }
+
+    &--justify-end {
+      justify-content: flex-end;
+    }
+    
+  }
+  
+  &-enter, &-leave-active {
+    opacity: 0;
+  }
+  
+  &-enter &__container,
+  &-leave-active &__container {
+    transform: scale(1.1);
+  }
+
+}
+
