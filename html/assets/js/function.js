@@ -1,5 +1,6 @@
 "use strict";
 
+/*
 let sbartrigger = document.querySelector('.js-sidebar-trigger');
 let sbarclose = document.querySelector('.js-sidebar-close');
 let sidebar = document.querySelector('.sidebar');
@@ -19,8 +20,9 @@ if(sidebar){
     });
   });
 }
+*/
 
-/*===== SIDEBAR & HEADER COLLAPSE MENU  =====*/
+/*===== SIDEBAR & HEADER COLLAPSE MENU  =====
 let linkCollapse = document.getElementsByClassName('collapse__link');
 for(var i=0; i<linkCollapse.length; i++){
   linkCollapse[i].addEventListener('click', function(){
@@ -31,18 +33,10 @@ for(var i=0; i<linkCollapse.length; i++){
     previousEl.classList.toggle('global-nav__link--open')
   })
 }
+*/
 
 
-/* 모달 테스트용 */
-let modal = document.getElementById('modal');
-function openModal() {
-    modal.style.display = "block";
-}
-function closeModal() {
-  modal.style.display = "none";  
-}
-
-/* 펼침 */
+/* 펼침 
 let elToggle = document.getElementsByClassName('js-showhide');
 
 for(var i=0; i<elToggle.length; i++){
@@ -62,9 +56,9 @@ for(var i=0; i<elToggle.length; i++){
     
   })
 }
+*/
 
-
-/* 커스텀 셀렉트 */
+/* 커스텀 셀렉트 
 const label = document.querySelectorAll('.select-dropdown__label');
 label.forEach(function(lb){
     lb.addEventListener('click', e => {
@@ -93,6 +87,16 @@ const clickLabel = (lb, optionItems) => {
 const handleSelect = (label, item) => {
     label.innerHTML = item.textContent;
     label.parentNode.classList.remove('expanded');
+}
+*/
+
+/* 모달 테스트용 */
+let modal = document.getElementById('modal');
+function openModal() {
+    modal.style.display = "block";
+}
+function closeModal() {
+  modal.style.display = "none";  
 }
 
 
