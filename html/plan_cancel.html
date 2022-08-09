@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>로그인</title>
+    <title>구독 해제</title>
     <link rel="stylesheet" href="assets/css/common.css">
 </head>
 
@@ -13,9 +13,9 @@
     <div class="app-wrap">
         <header class="header">
             <div class="header__button">
-                <a href="#" class="h-btn"><i class="icon arrow-left"></i></a>
+                <a href="login.html" class="h-btn"><i class="icon arrow-left"></i></a>
             </div>
-            <div class="header__title">로그인</div>   
+            <div class="header__title">구독 해제</div>   
             <div class="header__drawer-trigger js-drawer-trigger">
                 <div class="burger burger--menu">
                     <span class="burger__line"></span>
@@ -108,35 +108,18 @@
         <main class="views-wrap">
             <section class="section">
                 <div class="section__inner">
+                    <h2 class="section__title">구독 해제</h2>
+                    <div class="text-box mt6">
+                        <p>구독권 해지 시 잔여 결제일에 대한 환불은 이루어지지 않습니다.</p>
+                        <p class="mt2">구독권은 언제든지 재신청이 가능하며, 구독권 해지 6개월 후에 자동으로 회원탈퇴가 이루어집니다.</p>
+                    </div>
                     <form class="form">
                         <fieldset>
-                            <div class="field-group">
-                                <label for="password" class="field-group__label">이메일 (E-mail)</label>
-                                <div class="field-group__cont">
-                                    <input type="email" name="email" class="field-group__input" placeholder="이메일 주소">
-                                </div>
-                                <span class="field-group__help field-group__help--error"">이메일을 확인해주세요.</span>
+                            <div class="field-group mt16">
+                                <button class="btn btn--full" type="submit">구독 해제하기</button>
                             </div>
-                            <div class="field-group">
-                                <label for="password" class="field-group__label">비밀번호</label>
-                                <div class="field-group__cont">
-                                    <input type="password" name="password" class="field-group__input" placeholder="비밀번호를 입력해주세요">
-                                    <button type="button" class="field-group__btn js-pwToggle">Show</button>
-                                </div>
-                                <span class="field-group__help field-group__help--error"">비밀번호를 확인해주세요.</span>
-                            </div>
-                            <div class="field-group">
-                                <button class="btn btn--full btn--primary" type="button">로그인</button>
-                            </div>
-                            <div class="section__footer divider mt10 pt5">
-                                <a href="searchid.html" class="textbtn">계정 찾기</a>
-                                <span class="space-line"></span>
-                                <a href="searchpassword.html" class="textbtn">비밀번호 찾기</a>
-                                <span class="space-line"></span>
-                                <a href="signup.html" class="textbtn color-primary">회원가입</a>
-                            </div>     
                         </fieldset>    
-                    </form>              
+                    </form>
                 </div>
             </section>
         </main>

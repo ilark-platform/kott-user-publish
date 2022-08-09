@@ -34,6 +34,10 @@ body {
   word-break: keep-all;
   overflow-x: hidden;
 }
+body.overflow-hidden {
+  height: 100%;
+  overflow: hidden;
+}
 ul {
   list-style: none;
 }

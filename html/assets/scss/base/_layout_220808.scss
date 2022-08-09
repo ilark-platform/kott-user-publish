@@ -66,34 +66,8 @@
 	&.search {
 		width: 20px;
 		height: 20px;
-		background-image: icon(search);
+		background-image: icon(search,);
 	}
-
-  &.home {
-    width: 20px;
-		height: 20px;
-		background-image: icon(home);
-  }
-  &.category {
-    width: 20px;
-		height: 20px;
-		background-image: icon(category);
-  }
-  &.archive {
-    width: 20px;
-		height: 20px;
-		background-image: icon(archive2);
-  }
-  &.setting {
-    width: 20px;
-		height: 20px;
-		background-image: icon(setting);
-  }
-  &.cscenter {
-    width: 20px;
-		height: 20px;
-		background-image: icon(cscenter);
-  }
 }
 
 // 헤더 메뉴 아이콘 및 사이드바 메뉴 닫기 버튼
@@ -161,13 +135,6 @@
   margin-top: 2rem;
   padding-top: 2rem;
   border-top: $border;
-
-  &--thick {
-    border-top: none;
-    padding-top: 0;
-    height: 8px;
-    background-color: $color-gray-100;
-  }
 }
 
 .space-line {
@@ -269,18 +236,10 @@
       background-color: $color-black-200;
       border-radius: $border-radius;
     }
-
-    &--center {
-      text-align: center;
-    }
   }
   
   &__title {
     @include font-size(20, 12, 700);
-
-    &.text-center {
-      text-align: center;
-    }
   }
 
   &__footer {
@@ -404,35 +363,41 @@
 
 
 /* ------ 글로벌 메뉴 ----- */
-// --- 사이드바, MY, 고객센터, 약관 및 정책 메뉴 사용 ------------------------------------------------------------------
+// --- 헤더 메뉴, 사이드바 메뉴 사용 ------------------------------------------------------------------
 .global-nav {
   &__list {
-    padding-top: 2.4rem;
+    padding: 2rem;
   }
 
   &__item {
-    border-bottom: 1px solid $color-bline-200;
+    margin-bottom: 8px;
     
-    .icon.arrow-right {
-      background-image: icon(arrow-right, '696971');
+    &.collapse {
+      margin-top: 1.8rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid $color-gray-200;
+    }
+    /*
+    .collapse__link {
+    }
+    */
+    .collapse__arrow {
       margin-left: auto;
       margin-right: 0;
-      width: 20px;
-      height: 20px;
+      color: $color-gray-700;
     }
     .collapse__list {
-      padding: 3px 10px 19px 40px;
+      display: none;
+      padding: 8px 8px 8px 45px;
     }
-    .collapse__item {
-      margin: 2px 0;
+    .collapse__list.collapse__list--open {
+      display: block;
     }
     .collapse__sublink {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      display: block;
       font-size: 1.4rem;
       padding: 5px 0;
-      color: $color-white;
+      color: $color-gray-700;
       text-decoration: none;
       cursor: pointer;
       transition: all .3s;
@@ -447,25 +412,28 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    @include font-size(15, 14, 500);
-    margin: 2px 0;
-    padding: 1rem 1rem 1.2rem 1rem;
+    @include font-size(16, 14, 500);
+    padding: 1rem;
     color: $color-white;
     text-decoration: none;
     cursor: pointer;
     transition: all .3s;
 
-    &:hover, &:active {
-      background: darken($color-gray-300, 17%);
-      
+    &:hover, &:focus {
+      color: $color-primary;
+      i {
+        color: $color-primary; 
+      }
     }
 
-    & .icon:first-child {
-      margin-top: 4px;
-    }
-    
-    & .icon + .global-nav__title {
-      margin-left: 10px;
+    &--open {
+      color: $color-primary;
+      i {
+        color: $color-primary; 
+      }
+      .collapse__arrow {
+        transform: rotate(180deg);
+      }
     }
   }
 }
@@ -488,10 +456,11 @@
 .sidebar {
   @include position(fixed, $top: 0, $right: 0);
   height: 100vh;
-  min-height: 100vh;
-  width: 84%;
-  max-width: 300px;
-  background-color: #17171b;
+  max-height: 100vh;
+  width: 100%;
+  max-width: 86%;
+  min-width: 270px;
+  background-color: $color-gray-100;
   transition: all .3s ease-in-out;
   transform: translate(100%, 0px);
   z-index: 200;
@@ -504,14 +473,13 @@
   }  
 
   &__close {
-    @include position(absolute, $top: 1rem, $right: 2rem);
+    @include position(absolute, $top: 3rem, $right: 3.5rem);
     cursor: pointer;
     z-index: 3;
   }
 
   &__wrapper {
     @include size(100%, $height: 100%);
-    padding-bottom: 6.8rem;
     overflow-x: hidden;
     overflow-y: auto;
   }
@@ -521,26 +489,59 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    @include size(100%, $height: 48px);
-    background-color: #17171b;
-  }
+    @include size(100%, $height: 80px);
+    padding: 0 3rem;
+    border-bottom: $border;
 
-  .global-nav {
-    min-height: 560px;
-
-    &__list {
-      padding: 0 2rem 2rem;
+    .logo {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      &__image {
+        @include size(75px, $height: 33px);
+        
+        img {
+          @include size(75px, $height: 33px);
+        }
+      }
     }
   }
 
+  .global-nav {
+    min-height: 480px;
+  }
+
   &__footer {
+    @include position(absolute, $bottom: 0, $left: 0);
     display: flex;
-    justify-content: flex-end;
+    flex-direction: row;
     align-items: center;
-    @include size(100%, $height: 48px);
-    margin-top: 2rem;
+    @include size(100%, $height: 60px);
+    background-color: $color-white;
     padding: 0 3rem;
+    border-top: $border; 
     z-index: 2;   
+  }
+
+  @include tablet { 
+    /*브라우저 사이즈 1023px 이하일때*/
+    &__header {
+      height: 70px;
+      padding: 0 2rem;
+    }
+  }
+
+  @include mobile { 
+    /*브라우저 사이즈 767px 이하일때*/
+    &__header {
+      height: 60px;
+
+      .logo {
+        &__title {
+          font-size: 1.6rem;  
+        }
+      }
+    }
   }
 }
 

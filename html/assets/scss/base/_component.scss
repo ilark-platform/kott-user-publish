@@ -166,11 +166,12 @@
   margin-bottom: 1.6rem;
 
   &__wrapper {
-    display: block;
+    display: flex;
+    align-items: center;
     position: relative;
     cursor: pointer;
     padding-left: 34px;
-    height: 24px;
+    min-height: 24px;
   }
 
   &__title {
@@ -208,6 +209,7 @@
     width: 22px;
     border: 1px solid $color-gray-400;
     border-radius: 50%;
+    overflow: hidden;
 
     &::after {
       content: '';
@@ -521,13 +523,87 @@
 
 
 .textbtn {
-  display: block;
   @include font-size(12, 15, 500);
   color: $color-gray-600;
   padding: 0.5rem 1rem;
   text-decoration: none;
+
+  &--big {
+    @include font-size(14, 17, 500);
+  }
+
+  &--primay {
+    color: $color-primary;
+  }
+
 }
 
+
+/* ------------------------------ PLAN SUBSCRIPTION ------------------------------ */
+.planpanel {
+  
+  &__item {
+    padding: 2rem;
+    background-color: $color-gray-100;
+    border-radius: $border-radius;
+    transition: all 0.3s; 
+
+    & + & {
+      margin-top: 1.2rem;  
+    }
+
+    &--expanded {
+      padding: 3rem;
+      text-align: center;
+    }
+
+  }
+
+  &__title {
+    display: block;
+    @include font-size(16, 16, 500);
+    color: rgba($color-white, 1);
+    text-align: center;
+  }
+
+  &__price {
+    display: block;
+    text-align: center;
+    @include font-size(16, 16);
+    color: rgba($color-primary, 1);
+
+    strong {
+      display: inline-block;
+      @include font-size(26, 16, 500);
+    }
+  }
+
+  &__description {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba($color-gray-300, 0.3);
+
+    li {
+      position: relative;
+      @include font-size(12, 16); 
+      color: rgba($color-white, 0.4);
+      padding-left: 1rem;
+
+      &::after {
+        @include position(absolute, $top: 50%, $left: 0);
+        @include size(5px, $height: 1px);
+        content: '';
+        background-color: $color-gray-300;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .btn {
+    margin-top: 1.5rem;
+  }
+  
+}
 
 /* ------------------------------ MODAL ------------------------------ */
 .modal {
