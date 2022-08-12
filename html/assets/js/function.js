@@ -44,12 +44,12 @@ for(var i=0; i<elToggle.length; i++){
 }
 
 
-/* 커스텀 셀렉트 */
-const label = document.querySelectorAll('.select-dropdown__label');
+/* 검색 필터 Drop Down */
+const label = document.querySelectorAll('.filter-dropdown__label');
 label.forEach(function(lb){
     lb.addEventListener('click', e => {
         let optionList = lb.nextElementSibling;
-        let optionItems = optionList.querySelectorAll('.select-dropdown__item');
+        let optionItems = optionList.querySelectorAll('.filter-dropdown__item');
         clickLabel(lb, optionItems);
     })
 });

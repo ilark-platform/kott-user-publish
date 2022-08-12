@@ -9,6 +9,13 @@
 .color-red {
   color: $color-red;
 }
+.font-small {
+  font-size: 0.867em;
+}
+.font-w700 {
+  font-weight: 700;
+}
+
 //로고
 .logo {
   display: flex;
@@ -40,6 +47,7 @@
 	width: 30px;
 	height: 30px;
 	vertical-align: middle;
+  background-repeat: no-repeat;
 	
 	&.close {
 	  background-image: icon(close);
@@ -90,9 +98,9 @@
 		background-image: icon(setting);
   }
   &.cscenter {
-    width: 20px;
-		height: 20px;
-		background-image: icon(cscenter);
+    width: 18px;
+		height: 18px;
+		background-image: icon(cscenter2);
   }
 }
 
@@ -406,22 +414,26 @@
 /* ------ 글로벌 메뉴 ----- */
 // --- 사이드바, MY, 고객센터, 약관 및 정책 메뉴 사용 ------------------------------------------------------------------
 .global-nav {
+  &__text {
+    @include font-size(12, 15,500);
+    color: rgba($color-white, 0.6);
+  }
+
   &__list {
     padding-top: 2.4rem;
   }
 
   &__item {
-    border-bottom: 1px solid $color-bline-200;
+    border-bottom: 1px solid $color-bline-100;
     
-    .icon.arrow-right {
-      background-image: icon(arrow-right, '696971');
+    .arrow-right {
+      background-image: icon(arrow-right, '898992');
       margin-left: auto;
-      margin-right: 0;
       width: 20px;
       height: 20px;
     }
     .collapse__list {
-      padding: 3px 10px 19px 40px;
+      padding: 0.3rem 0.5rem 1.8rem 3rem;
     }
     .collapse__item {
       margin: 2px 0;
@@ -430,7 +442,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      font-size: 1.4rem;
+      @include font-size(14, 16);
       padding: 5px 0;
       color: $color-white;
       text-decoration: none;
@@ -445,19 +457,32 @@
   &__link {
     position: relative;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    @include font-size(15, 14, 500);
+    @include font-size(15, 14);
     margin: 2px 0;
-    padding: 1rem 1rem 1.2rem 1rem;
+    padding: 1rem 0.5rem 1.2rem 0;
     color: $color-white;
     text-decoration: none;
     cursor: pointer;
     transition: all .3s;
 
+    &--justify-between {
+      justify-content: space-between;
+    }
+
+    .arrow-right.ml0 {
+        margin-left: 0;
+    }
+
     &:hover, &:active {
       background: darken($color-gray-300, 17%);
-      
+    }
+
+    &--nohover {
+      cursor: initial;
+      &:hover, &:active {
+        background: transparent;
+      }
     }
 
     & .icon:first-child {
@@ -583,42 +608,16 @@
   &__item {
     display: flex;
     align-items: center;
-    height: 23px;
-    font-size: 1.2rem;
-    color: $color-primary;
-    padding: 0 1.2rem;
+    height: 20px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: $color-white;
+    background-color: $color-primary;
+    padding: 0 0.5rem;
     margin-right: 6px;
-    border: 1px solid $color-primary;
-    border-radius: 23px;
-
-    &--discontinued {
-      color: $color-white;
-      border: 1px solid $color-gray-500;
-      background-color: $color-gray-500;
-    }
+    border-radius: 2px;
   }
 }
-
-
-/* ------ 해시태그 ----- */
-.hashtag {
-  display: flex;
-  align-items: center;
-
-  &__item {
-    display: flex;
-    align-items: center;
-    height: 28px;
-    font-size: 1.2rem;
-    color: $color-gray-600;
-    padding: 0 10px;
-    margin-right: 6px;
-    border: 1px solid $color-gray-500;
-    border-radius: 28px;
-  }
-}
-
-
 
 
 
@@ -656,12 +655,6 @@
 }
 
 
-
-
-
-
-
-
 /* 펼침 */
 .js-showhide {
   cursor: pointer;
@@ -694,3 +687,9 @@
 
 @include margin-classes;
 @include padding-classes;
+.mr-auto {
+  margin-right: auto;
+}
+.ml-auto {
+  margin-left: auto;
+}

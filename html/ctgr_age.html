@@ -5,17 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>내 구독(결제) 관리</title>
+    <meta name="format-detection" content="telephone=no">
+    <title>카테고리 - 시대</title>
     <link rel="stylesheet" href="assets/css/common.css">
 </head>
 
 <body>
-    <section class="app-wrap">
+    <div class="app-wrap">
         <header class="header">
             <div class="header__button">
-                <a href="login.html" class="h-btn"><i class="icon arrow-left"></i></a>
+                <a href="#" class="h-btn"><i class="icon arrow-left"></i></a>
             </div>
-            <div class="header__title">내 구독(결제) 관리</div>   
+            <div class="header__title">시대</div>   
             <div class="header__drawer-trigger js-drawer-trigger">
                 <div class="burger burger--menu">
                     <span class="burger__line"></span>
@@ -106,42 +107,75 @@
         <div class="dim-layer"></div>
 
         <main class="views-wrap">
-            <section class="section mb10">
+            <section class="section">
                 <div class="section__inner">
-                    <div class="planpanel">
-                        <div class="planpanel__item planpanel__item--expanded">
-                            <span class="planpanel__title">정기결제일 (쿠폰잔여일)</span>
-                            <span class="planpanel__price"><strong>235</strong> 일</span>
-                            <button class="btn btn--small btn--primary" type="submit">구독 연장하기</button>
-                        </div>     
+                    <h2 class="section__title">시대</h2>
+                    <div class="category-list2 mt6">
+                        <div class="category-list2__group">
+                            <ul class="category-list2__itemlist">
+                                <li class="category-list2__item">
+                                    <a href="#" class="category-list2__link">
+                                        <div class="category-list2__image">
+                                            <img src="assets/img/ctgr_list_img01.jpg" alt="중세">
+                                        </div>
+                                        <div class="category-list2__info">
+                                            <span class="category-list2__title category-list2__title--large">중세</span>
+                                        </div>                                        
+                                    </a>
+                                </li>
+                                <li class="category-list2__item">
+                                    <a href="#" class="category-list2__link">
+                                        <div class="category-list2__image">
+                                            <img src="assets/img/ctgr_list_img02.jpg" alt="르네상스">
+                                        </div>
+                                        <div class="category-list2__info">
+                                            <span class="category-list2__title category-list2__title--large">르네상스</span>
+                                        </div>                                        
+                                    </a>
+                                </li>
+                                <li class="category-list2__item">
+                                    <a href="#" class="category-list2__link">
+                                        <div class="category-list2__image">
+                                            <img src="assets/img/ctgr_list_img03.jpg" alt="바로크">
+                                        </div>
+                                        <div class="category-list2__info">
+                                            <span class="category-list2__title category-list2__title--large">바로크</span>
+                                        </div>                                        
+                                    </a>
+                                </li>
+                                <li class="category-list2__item">
+                                    <a href="#" class="category-list2__link">
+                                        <div class="category-list2__image">
+                                            <img src="assets/img/ctgr_list_img04.jpg" alt="고전주의">
+                                        </div>
+                                        <div class="category-list2__info">
+                                            <span class="category-list2__title category-list2__title--large">고전주의</span>
+                                        </div>                                        
+                                    </a>
+                                </li>
+                                <li class="category-list2__item">
+                                    <a href="#" class="category-list2__link">
+                                        <div class="category-list2__image">
+                                            <img src="assets/img/ctgr_list_img01.jpg" alt="낭만주의">
+                                        </div>
+                                        <div class="category-list2__info">
+                                            <span class="category-list2__title category-list2__title--large">낭만주의</span>
+                                        </div>                                        
+                                    </a>
+                                </li>
+                                <li class="category-list2__item">
+                                    <a href="#" class="category-list2__link">
+                                        <div class="category-list2__image">
+                                            <img src="assets/img/ctgr_list_img02.jpg" alt="근현대음악">
+                                        </div>
+                                        <div class="category-list2__info">
+                                            <span class="category-list2__title category-list2__title--large">근현대음악</span>
+                                        </div>                                        
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </section>
-            <span class="divider"></span>
-            <section class="section mt4 mb10">
-                <div class="section__inner">
-                    <h2 class="section__title">쿠폰 입력하기</h2>
-                    <form class="form">
-                        <fieldset>
-                            <div class="field-group">
-                                <label for="coupon" class="field-group__label">쿠폰번호 입력</label>
-                                <div class="field-group__cont">
-                                    <input type="text" name="coupon" class="field-group__input" placeholder="xxxx-xxxx-xxxx-xxxx">
-                                </div>
-                                <span class="field-group__help field-group__help--error"">유효하지 않은 쿠폰번호입니다.</span>
-                            </div>
-                            <div class="field-group">
-                                <!-- 쿠폰번호 입력 완료시 쿠폰 입력하기 버튼에 btn--primary 클래스 추가 -->
-                                <button class="btn btn--small btn--full" type="submit">쿠폰 입력하기</button>
-                            </div>
-                        </fieldset>    
-                    </form>
-                </div>
-            </section>
-            <span class="divider"></span>
-            <section class="section mt4">
-                <div class="section__inner section__inner--center">
-                    <a href="plan_cancel.html" class="textbtn textbtn--big textbtn--primay">구독 해제하기</a>
                 </div>
             </section>
         </main>

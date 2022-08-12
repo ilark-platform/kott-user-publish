@@ -5,17 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>내 구독(결제) 관리</title>
+    <meta name="format-detection" content="telephone=no">
+    <title>MY</title>
     <link rel="stylesheet" href="assets/css/common.css">
 </head>
 
 <body>
-    <section class="app-wrap">
+    <div class="app-wrap">
         <header class="header">
             <div class="header__button">
-                <a href="login.html" class="h-btn"><i class="icon arrow-left"></i></a>
+                <a href="#" class="h-btn"><i class="icon arrow-left"></i></a>
             </div>
-            <div class="header__title">내 구독(결제) 관리</div>   
+            <div class="header__title">MY</div>   
             <div class="header__drawer-trigger js-drawer-trigger">
                 <div class="burger burger--menu">
                     <span class="burger__line"></span>
@@ -106,42 +107,65 @@
         <div class="dim-layer"></div>
 
         <main class="views-wrap">
-            <section class="section mb10">
+            <section class="section">
                 <div class="section__inner">
-                    <div class="planpanel">
-                        <div class="planpanel__item planpanel__item--expanded">
-                            <span class="planpanel__title">정기결제일 (쿠폰잔여일)</span>
-                            <span class="planpanel__price"><strong>235</strong> 일</span>
-                            <button class="btn btn--small btn--primary" type="submit">구독 연장하기</button>
-                        </div>     
+                    <h2 class="section__title">MY</h2>
+                    <div class="global-nav mt6">
+                        <span class="global-nav__text">영상</span>
+                        <ul class="global-nav__list pt2">
+                            <li class="global-nav__item">
+                                <a href="#" class="global-nav__link">
+                                    <span class="global-nav__title">개인 아카이브</span>
+                                    <i class="icon arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="global-nav__item">
+                                <a href="#" class="global-nav__link">
+                                    <span class="global-nav__title">시청기록</span>
+                                    <i class="icon arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                </div>
-            </section>
-            <span class="divider"></span>
-            <section class="section mt4 mb10">
-                <div class="section__inner">
-                    <h2 class="section__title">쿠폰 입력하기</h2>
-                    <form class="form">
-                        <fieldset>
-                            <div class="field-group">
-                                <label for="coupon" class="field-group__label">쿠폰번호 입력</label>
-                                <div class="field-group__cont">
-                                    <input type="text" name="coupon" class="field-group__input" placeholder="xxxx-xxxx-xxxx-xxxx">
+                    <div class="global-nav mt10">
+                        <span class="global-nav__text">계정 정보 수정</span>
+                        <ul class="global-nav__list pt2">
+                            <li class="global-nav__item">
+                                <a href="repassword.html" class="global-nav__link">
+                                    <span class="global-nav__title">비밀번호 변경</span>
+                                    <i class="icon arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="global-nav__item">
+                                <a href="plan.html" class="global-nav__link">
+                                    <span class="global-nav__title">구독(결제) 관리</span>
+                                    <span class="font-small font-w700 color-primary ml-auto mr2">월간 구독 (D-22)</span>
+                                    <i class="icon arrow-right ml0"></i>
+                                </a>
+                            </li>
+                            <li class="global-nav__item">
+                                <a href="resignmember.html" class="global-nav__link">
+                                    <span class="global-nav__title">회원탈퇴</span>
+                                    <i class="icon arrow-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="global-nav mt10">
+                        <span class="global-nav__text">알림 설정</span>
+                        <ul class="global-nav__list pt2">
+                            <li class="global-nav__item">
+                                <div class="global-nav__link global-nav__link--justify-between global-nav__link--nohover">
+                                    <span class="global-nav__title">푸쉬 알림 받기</span>
+                                    <div class="switcher">
+                                        <label class="switcher__label">
+                                            <input type="checkbox" class="switcher__input" checked><b></b>
+                                        </label>
+                                    </div>
                                 </div>
-                                <span class="field-group__help field-group__help--error"">유효하지 않은 쿠폰번호입니다.</span>
-                            </div>
-                            <div class="field-group">
-                                <!-- 쿠폰번호 입력 완료시 쿠폰 입력하기 버튼에 btn--primary 클래스 추가 -->
-                                <button class="btn btn--small btn--full" type="submit">쿠폰 입력하기</button>
-                            </div>
-                        </fieldset>    
-                    </form>
-                </div>
-            </section>
-            <span class="divider"></span>
-            <section class="section mt4">
-                <div class="section__inner section__inner--center">
-                    <a href="plan_cancel.html" class="textbtn textbtn--big textbtn--primay">구독 해제하기</a>
+                            </li>
+                        </ul>        
+                    </div>          
                 </div>
             </section>
         </main>

@@ -68,9 +68,10 @@
   &__cont {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
-    border: 1px solid $color-gray-100;
-    background-color: $color-gray-100;
+    border: 1px solid $color-gray-200;
+    background-color: $color-gray-200;
     border-radius: $border-radius; 
     transition: all 0.3s; 
     
@@ -78,15 +79,15 @@
       border-color: $color-red;
     }
 
-    &--disabled, &:disabled {
-      border: 1px solid $color-gray-300;
-      background-color: $color-gray-300;
+    &--disabled, & .field-group__input:disabled {
+      border: 1px solid $color-black-200;
+      background-color: $color-black-200;
 		  cursor: not-allowed;
     }
 
     &:focus-within {
-      border-color: $color-gray-200;
-      background-color: $color-gray-200;
+      border-color: rgba($color-gray-300, 0.5);
+      background-color: rgba($color-gray-300, 0.5);
     }
   }
 
@@ -128,34 +129,105 @@
       color: $color-red;  
     }
   }
+}
 
-  // --- 주소지 검색 필드만 사용 ------------------------------------------------------------------
-  .field-address {
+
+/* ------------------------------ SEARCH ------------------------------ */
+.search-form {
+  
+  .icon.search {
+    margin-left: 1.2rem;
+    margin-top: 0.2rem;
+  }
+}
+
+/* ------------------------------ 검색 필터 Drop Down ------------------------------ */
+.filter-dropdown {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 5;
+
+  width: auto;
+  min-width: 124px;
+
+  &__inner {
     position: relative;
-    display: flex;
-    align-items: center;
-  }
-  .field-address .field-group__input {
-    margin-left: 6px;
-    width: calc(100% - 98px);
-  }
-  .field-address .btn {
-    font-size: 1.4rem;
-    width: 98px;
-    height: 50px;
-    padding: 0;
-    margin-top: 0;
+    height: 30px;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s;  
+
+    &.expanded {
+      .filter-dropdown__arrow {
+        top: 12px;
+        transform: rotateZ(180deg);
+      }
+
+      .filter-dropdown__list {
+        display: block;
+        
+      }
+    }
   }
 
-  .field-address ~ .field-group__input {
-    margin-top: 6px;
+  &__arrow {
+    @include position(absolute, $top: 14px, $right: 12px);
+    @include size($width: 0, $height: 0);
+    border-top: 6px solid #898992;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    border-radius: 2px;
+    pointer-events: none;
   }
   
-  .text-box {
-    p {
-      @include font-size(12, 15);
-      color: rgba($color-white, 0.4);
+  &__label {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+    padding: 0.5rem 1.2rem;
+    padding-right: 3.6rem;
+    color: rgba($color-white, 0.6);
+  }
+  
+  &__list {
+    display: none;
+    @include position(absolute, $top: 108%, $right: 0);
+    width: auto;
+    min-width: 86px;
+    font-size: 1.4rem;
+    text-align: center;
+    border-radius: 0.4rem;  
+    background-color: $color-gray-200;
+    box-shadow: $box-shadow;
+    animation: display-none-transition 0.2s ease-in-out forwards;
+    transform-origin: top center;
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  &__item {
+    padding: 1rem 1rem;
+    color: rgba($color-white, 0.6);
+    border-bottom: 1px solid rgba($color-gray-300, 0.3);
+    
+    &:last-child {
+      border-bottom: none;
     }
+
+    &:hover {
+      background-color: #414141;
+    }    
+  }
+}
+
+@keyframes display-none-transition {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
 
@@ -291,18 +363,14 @@
   
   &--show {
     @include position(absolute, $top: 0, $left: 0);
-    height: 22px;
-    width: 22px;
+    @include size($width: 22px, $height: 22px);
     border: 1px solid $color-gray-400;
     border-radius: 50%;
 
     &::after {
       content: '';
-      position: absolute;
-      left: 3px;
-      top: 3px;
-      width: 14px;
-      height: 14px;
+      @include position(absolute, $top: 3px, $left: 3px);
+      @include size($width: 14px, $height: 14px);
       background-color: transparent;
       border-radius: 100%;
       transform: scale(0);
@@ -338,140 +406,6 @@
       }
     }
     
-  }
-}
-
-
-/* ------------------------------ CUSTOM SELECT ------------------------------ */
-.select-dropdown {
-  width: 100%;
-  min-width: 124px;
-
-  &__inner {
-    position: relative;
-    height: 50px;
-    border: 1px solid $color-gray-100;
-    background-color: $color-gray-100;
-    border-radius: $border-radius; 
-    cursor: pointer;
-    z-index: 2;
-    transition: all 0.3s;  
-
-    &.expanded {
-      background-color: $color-white;
-      border-color: $color-primary;
-
-      .select-dropdown__arrow {
-        margin-top: 4px;
-        transform: rotateZ(45deg);
-      }
-
-      .select-dropdown__list {
-        max-height: 288px; 
-      }
-    }
-  }
-
-  &__arrow {
-    position: absolute;
-    right: 20px;
-    top: 38%;
-    width: 10px;
-    height: 10px;
-    border-left: 1px solid $color-gray-500;
-    border-top: 1px solid $color-gray-500;
-    transform: rotateZ(-135deg);
-    transition: .2s ease-in;
-    pointer-events: none;
-  }
-  
-  &__label {
-    display: flex;
-    align-items: center;
-    font-size: 1.4rem;
-    padding: 1.6rem;
-    color: $color-black-100;
-    margin-bottom: 2px;
-  }
-  
-  &__list {
-    position: absolute;
-    width: 100%;
-    font-size: 1.4rem;
-    border-radius: $border-radius;  
-    background-color: #575757;
-    box-shadow: $box-shadow;
-    overflow-y: auto;
-    z-index: 2;
-    max-height: 0;
-    transition: .2s ease-in;
-    
-    &::-webkit-scrollbar { width: 6px; }
-    &::-webkit-scrollbar-track { background: transparent; }
-    &::-webkit-scrollbar-thumb { background: #212121; border-radius: 6px; }
-    &::-webkit-scrollbar-thumb:hover { background: #212121; }
-  }
-
-  &__item {
-    padding: 1.4rem 1.4rem;
-    color: $color-white;
-    border-bottom: 1px dashed #4e4e4e;
-    
-    &:last-child {
-      border-bottom: none;
-    }
-
-    &:hover {
-      background-color: #414141;
-    }    
-  }
-
-  &--flat {
-    width: auto;
-    min-width: auto;
-
-    .select-dropdown__inner {
-      height: auto;
-      border: none;
-      background-color: transparent;
-  
-      &.expanded {
-        background-color: transparent;
-      }
-    }
-
-    .select-dropdown__arrow {
-      right: 0;
-      top: 35%;
-    }
-
-    .select-dropdown__label {
-      font-size: 1.8rem;
-      padding: 1rem 1.2rem;
-      padding-right: 2.4rem;
-      height: 40px;
-    }
-
-    .select-dropdown__item {
-      padding: 1rem 1.2rem;
-    }
-  }
-
-  @include mobile { 
-    /*브라우저 사이즈 767px 이하일때*/
-
-    &--flat {
-      .select-dropdown__arrow {
-        right: 0;
-        top: 30%;
-      }
-  
-      /*
-      .select-dropdown__label {
-        font-size: 1.6rem;
-      }
-      */
-    }    
   }
 }
 
@@ -539,9 +473,56 @@
 }
 
 
-/* ------------------------------ PLAN SUBSCRIPTION ------------------------------ */
-.planpanel {
+.switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
+  &__label {
+    position: relative;
+    display: inline-flex;
+    width: 60px;
+    height: 32px;
+    padding: 2px;
+
+    .switcher__input:checked + b {
+      background-color: $color-primary;
+    }
+    .switcher__input:checked + b::before {
+      transform: translateX(28px);
+    }
+  }
+
+  &__input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  b {
+    @include position(absolute, $top: 0, $right: 0, $bottom: 0, $left: 0);
+    cursor: pointer;
+    background-color: $color-gray-300;
+    transition: .5s;
+    border-radius: 50px;
+
+    &::before {
+      @include position(absolute, $top: 0, $left: 0);
+      @include size($width: 28px, $height: 28px);
+      content: '';      
+      margin: 2px;
+      background-color: $color-white;
+      transition: .5s;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px 0 rgba($color-black, .2);
+    }
+
+  }
+}
+
+
+/* ------------------------------ 구독 서비스 리스트 ------------------------------ */
+.planpanel {
   &__item {
     padding: 2rem;
     background-color: $color-gray-100;
@@ -604,6 +585,128 @@
   }
   
 }
+
+/* ------------------------------ 카테고리 리스트 ------------------------------ */
+// --- 작곡가, 지휘자, 오케스트라, 국가 ------------------------------------------------------------------
+.category-list1 {
+
+  &__group {
+    position: relative;
+
+    & + & {
+      margin-top: 2.8rem;
+    }
+
+  }
+  &__subject {
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 48px;
+    @include size(100%, $height: 48px);
+    @include font-size(20, 12, 700);
+    color: rgba($color-white, 0.6);
+    background-color: rgba($color-black-100, .9);
+    border-bottom: 1px solid $color-bline-100;
+    z-index: 2;
+  }
+
+  &__itemlist {
+
+  }
+
+  &__item {
+    border-bottom: 1px solid $color-bline-100;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include font-size(16, 15, 500);
+    margin: 2px 0;
+    padding: 1rem 0.5rem 1.2rem 0;
+    color: $color-white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover, &:active {
+      background: darken($color-gray-300, 17%);
+    }
+  }
+}
+
+// --- 시대, 장르, 극장, 아카이브 ------------------------------------------------------------------
+.category-list2 {
+
+  &__group {
+    position: relative;
+
+    & + & {
+      margin-top: 2.8rem;
+    }
+  }
+
+  &__item {
+    border: 1px solid $color-gray-200;
+    background-color: $color-gray-200;
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    & + & {
+      margin-top: 2rem;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    @include size(100%, $height: 130px);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover, &:active {
+      background: darken($color-gray-300, 17%);
+    }
+  }
+
+  &__image {
+    @include size(130px, $height: 130px);
+    border-radius: $border-radius;
+    overflow: hidden;
+
+    img {
+      @include size(100%, $height: auto);
+    }
+  }
+
+  &__info { 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include size(calc( 100% - 130px), $height: 100%);
+    padding: 0 2rem;
+
+    .chips {
+      @include position(absolute, $top: 2rem, $left: 2rem);
+
+    }
+  }
+
+  &__title {
+    @include font-size(16, 15, 500);
+    color: $color-white;
+
+    &--large {
+      @include font-size(20, 12, 500); 
+    }  
+  }
+}
+
 
 /* ------------------------------ MODAL ------------------------------ */
 .modal {
