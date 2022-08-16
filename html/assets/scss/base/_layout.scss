@@ -16,6 +16,7 @@
   font-weight: 700;
 }
 
+
 //로고
 .logo {
   display: flex;
@@ -102,6 +103,26 @@
 		height: 18px;
 		background-image: icon(cscenter2);
   }
+  &.time {
+    width: 14px;
+		height: 14px;
+		background-image: icon(time);
+  }
+  &.archive-save {
+    width: 16px;
+		height: 16px;
+		background-image: icon(archive-save);
+  }
+  &.share {
+    width: 16px;
+		height: 16px;
+		background-image: icon(share);
+  }
+  &.play {
+    width: 40px;
+		height: 40px;
+		background-image: icon(play);
+  }
 }
 
 // 헤더 메뉴 아이콘 및 사이드바 메뉴 닫기 버튼
@@ -143,7 +164,32 @@
   }
 }
 
+
+// 콘서트, 페스티벌, 오페라, 발레, 다큐 카테고리
+.chips {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    @include font-size(12, 14, 500);
+    color: $color-primary;    
+    margin-right: 6px;
+
+    &--rounded {
+      color: $color-black;
+      background-color: $color-primary;
+      border-radius: 2px;
+      padding: 0 0.5rem;
+    }
+  }
+}
+
+
 //알람 
+/*
 .badge {
   @include position(absolute, $top: 3px, $left: 19px);
   //@include size(15px, $height: 15px);
@@ -161,6 +207,7 @@
   z-index: 2;
   transition: all .3s;
 }
+*/
 
 //단락 나눔
 .divider {
@@ -235,10 +282,13 @@
   }
 
   &__title {
+    max-width: 210px;
     font-size: 1.5rem;
     font-weight: 500;
     color: $color-white;
-
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__drawer-trigger {
@@ -265,10 +315,19 @@
 /* ------------------------------ SUB COMMON ------------------------------ */
 .views-wrap {
   padding: 76px 0;
+
+  &--sticky {
+    padding-top: 48px;
+  }
 }
 
 .section {
+  position: relative;
   padding: 0 2rem;
+
+  &--expansion {
+    padding: 0;
+  }
 
   &__inner {
 
@@ -569,92 +628,6 @@
   }
 }
 
-
-
-// --- 버튼 영역 공통 ------------------------------------------------------------------
-.btn-wrapper {
-  display: flex;
-  justify-content: end;
-  width: 100%;
-  margin-top: 3rem;
-  
-  &__link {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    color: $color-black-100;
-    text-decoration: none;
-    transition: all .3s;
-
-    &:hover {
-      color: $color-gray-600;
-    }
-
-    i {
-      font-size: 2rem;
-      margin-right: 3px;
-    }
-  }
-}
-
-
-
-
-/* ------ CHIPS ----- */
-.chips {
-  display: flex;
-  align-items: center;
-
-  &__item {
-    display: flex;
-    align-items: center;
-    height: 20px;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: $color-white;
-    background-color: $color-primary;
-    padding: 0 0.5rem;
-    margin-right: 6px;
-    border-radius: 2px;
-  }
-}
-
-
-
-/* 페이지네이션 */
-.pagination {
-  margin: 4rem 0 1rem;
-  &__list {
-    display: flex;
-    justify-content: center;
-  }
-
-  &__item {
-    margin: 0 5px;
-  }
-
-  &__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;    
-    font-size: 1.2rem;
-    color: $color-gray-700;
-    border-radius: $border-radius;
-    text-decoration: none;
-    background-color: $color-white;
-    box-shadow: 1px 1px 5px -2px $color-gray-700;
-    transition: all .3s;
-
-    &--active {
-      color: $color-white;
-      background-color: $color-primary;  
-    }
-  }
-}
-
-
 /* 펼침 */
 .js-showhide {
   cursor: pointer;
@@ -693,3 +666,72 @@
 .ml-auto {
   margin-left: auto;
 }
+
+
+
+/*
+.btn-wrapper {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  margin-top: 3rem;
+  
+  &__link {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: $color-black-100;
+    text-decoration: none;
+    transition: all .3s;
+
+    &:hover {
+      color: $color-gray-600;
+    }
+
+    i {
+      font-size: 2rem;
+      margin-right: 3px;
+    }
+  }
+}
+*/
+
+
+
+
+
+
+/* 페이지네이션
+.pagination {
+  margin: 4rem 0 1rem;
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    margin: 0 5px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;    
+    font-size: 1.2rem;
+    color: $color-gray-700;
+    border-radius: $border-radius;
+    text-decoration: none;
+    background-color: $color-white;
+    box-shadow: 1px 1px 5px -2px $color-gray-700;
+    transition: all .3s;
+
+    &--active {
+      color: $color-white;
+      background-color: $color-primary;  
+    }
+  }
+}
+ */
+

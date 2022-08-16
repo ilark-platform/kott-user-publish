@@ -22,25 +22,56 @@ if(sidebar){
 }
 
 
-/* 펼침 */
-let elToggle = document.getElementsByClassName('js-showhide');
+/* 영상 설명 More & Less */
+class readMore {
+  constructor() {
+      this.content = '.readmore__content';
+      this.buttonToggle = '.readmore__toggle';
+  }
+  
+  moreEl() {
+      this.setNodes();
+      this.init();
+      this.addEventListeners();
+  }
+  
+  setNodes() {
+      this.nodes = {
+          contentToggle: document.querySelector(this.content)
+      };
+      this.buttonToggle = this.nodes.contentToggle.parentElement.querySelector(this.buttonToggle);
+  }
+  
+  init() {
+      const { contentToggle } = this.nodes;
+      this.stateContent = contentToggle.innerHTML;
+      contentToggle.innerHTML = `${this.stateContent.substring(0, 250)}...`;
+  }
 
-for(var i=0; i<elToggle.length; i++){
-  elToggle[i].nextElementSibling.style.display = "none";
+  addEventListeners() {
+      this.buttonToggle.addEventListener('click', this.onClick.bind(this))
+  }
 
-  elToggle[i].addEventListener('click', function(){
-    let targetEl = this.nextElementSibling
-    if (targetEl.style.display=='block') {
-      targetEl.style.display='none';
-    }
-    else {
-      targetEl.style.display='block';
-    }
-    
-    let previousEl = targetEl.previousElementSibling
-    previousEl.classList.toggle('is-open')
-    
-  })
+  onClick(event) {
+      const targetEvent = event.currentTarget;
+      const { contentToggle } = this.nodes
+
+      if (targetEvent.getAttribute('aria-checked') === 'true') {
+          targetEvent.setAttribute('aria-checked', 'false')
+          contentToggle.innerHTML = this.stateContent;
+          this.buttonToggle.innerHTML = '설명 줄이기 <i class="icon arrow-up"></i>'
+      } else {
+          targetEvent.setAttribute('aria-checked', 'true')
+          contentToggle.innerHTML = `${this.stateContent.substring(0, 250)}...`
+          this.buttonToggle.innerHTML = '설명 더보기 <i class="icon arrow-down"></i>'
+      }
+  }
+}
+
+const readmoreCont = document.querySelector(".readmore__content");
+if (readmoreCont) {
+  const initReadMore = new readMore();
+  initReadMore.moreEl();
 }
 
 

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="format-detection" content="telephone=no">
-    <title>카테고리 - 극장</title>
+    <title>시청기록</title>
     <link rel="stylesheet" href="assets/css/common.css">
 </head>
 
@@ -16,7 +16,7 @@
             <div class="header__button">
                 <a href="#" class="h-btn"><i class="icon arrow-left"></i></a>
             </div>
-            <div class="header__title">극장</div>   
+            <div class="header__title">시청기록</div>   
             <div class="header__drawer-trigger js-drawer-trigger">
                 <div class="burger burger--menu">
                     <span class="burger__line"></span>
@@ -106,92 +106,175 @@
         </div>
         <div class="dim-layer"></div>
 
-        <main class="views-wrap" style="perspective: 1px;
-        transform-style: preserve-3d;">
-            <section class="section">
+        <main class="views-wrap pt11">
+            <section class="section mt6">
                 <div class="section__inner">
-                    <h2 class="section__title">극장</h2>
+                    <h2 class="section__title">시청기록</h2>
                     <div class="category-list2 mt6">
-                        <div class="category-list2__group">
+                        <div class="btn-group">
+                            <button type="button" class="textbtn">전체선택</button>
+                            <button type="button" class="textbtn">선택삭제</button>
+                        </div>
+                        <div class="category-list2__group mt3">
                             <ul class="category-list2__itemlist">
                                 <li class="category-list2__item">
-                                    <a href="ctgr_depth3.html" class="category-list2__link">
+                                    <div class="checkbox">
+                                        <label class="checkbox__wrapper">
+                                            <span class="checkbox__title checkbox__title--blind">1</span>
+                                            <input type="checkbox" name="agree" class="checkbox--hidden checkbox--primary">
+                                            <div class="checkbox--show"></div>
+                                        </label>
+                                    </div>
+                                    <a href="view_video.html" class="category-list2__link">
                                         <div class="category-list2__image">
                                             <img src="assets/img/ctgr_list_img01.jpg" alt="로열 앨버트 홀">
                                         </div>
                                         <div class="category-list2__info">
+                                            <div class="chips">
+                                                <span class="chips__item chips__item--color-purple">콘서트</span>
+                                            </div>
                                             <span class="category-list2__title">로열 앨버트 홀</span>
                                         </div>                                        
                                     </a>
                                 </li>
-                                <li class="category-list2__item">
-                                    <a href="ctgr_depth3.html" class="category-list2__link">
+                                <li class="category-list2__item category-list2__item--expend">
+                                    <div class="checkbox">
+                                        <label class="checkbox__wrapper">
+                                            <span class="checkbox__title checkbox__title--blind">2</span>
+                                            <input type="checkbox" name="agree" class="checkbox--hidden checkbox--primary">
+                                            <div class="checkbox--show"></div>
+                                        </label>
+                                    </div>   
+                                    <a href="view_video.html" class="category-list2__link">
                                         <div class="category-list2__image">
                                             <img src="assets/img/ctgr_list_img02.jpg" alt="베를린 필하모니">
                                         </div>
                                         <div class="category-list2__info">
+                                            <div class="chips">
+                                                <span class="chips__item chips__item--color-blue">페스티벌</span>
+                                            </div>
                                             <span class="category-list2__title">베를린 필하모니</span>
-                                        </div>                                        
+                                        </div>    
                                     </a>
                                 </li>
                                 <li class="category-list2__item">
-                                    <a href="ctgr_depth3.html" class="category-list2__link">
+                                    <div class="checkbox">
+                                        <label class="checkbox__wrapper">
+                                            <span class="checkbox__title checkbox__title--blind">3</span>
+                                            <input type="checkbox" name="agree" class="checkbox--hidden checkbox--primary">
+                                            <div class="checkbox--show"></div>
+                                        </label>
+                                    </div>  
+                                    <a href="view_video.html" class="category-list2__link">
                                         <div class="category-list2__image">
                                             <img src="assets/img/ctgr_list_img03.jpg" alt="보스턴 심포니홀">
                                         </div>
                                         <div class="category-list2__info">
+                                            <div class="chips">
+                                                <span class="chips__item chips__item--color-gold">오페라</span>
+                                            </div>
                                             <span class="category-list2__title">보스턴 심포니홀</span>
-                                        </div>                                        
+                                        </div>   
                                     </a>
                                 </li>
                                 <li class="category-list2__item">
-                                    <a href="ctgr_depth3.html" class="category-list2__link">
+                                    <div class="checkbox">
+                                        <label class="checkbox__wrapper">
+                                            <span class="checkbox__title checkbox__title--blind">4</span>
+                                            <input type="checkbox" name="agree" class="checkbox--hidden checkbox--primary">
+                                            <div class="checkbox--show"></div>
+                                        </label>
+                                    </div> 
+                                    <a href="view_video.html" class="category-list2__link">
                                         <div class="category-list2__image">
                                             <img src="assets/img/ctgr_list_img04.jpg" alt="빈 무지크페라인">
                                         </div>
                                         <div class="category-list2__info">
+                                            <div class="chips">
+                                                <span class="chips__item">발레</span>
+                                            </div>
                                             <span class="category-list2__title">빈 무지크페라인</span>
-                                        </div>                                        
+                                        </div>  
                                     </a>
                                 </li>
                                 <li class="category-list2__item">
-                                    <a href="ctgr_depth3.html" class="category-list2__link">
+                                    <div class="checkbox">
+                                        <label class="checkbox__wrapper">
+                                            <span class="checkbox__title checkbox__title--blind">5</span>
+                                            <input type="checkbox" name="agree" class="checkbox--hidden checkbox--primary">
+                                            <div class="checkbox--show"></div>
+                                        </label>
+                                    </div>  
+                                    <a href="view_video.html" class="category-list2__link">
                                         <div class="category-list2__image">
                                             <img src="assets/img/ctgr_list_img01.jpg" alt="삿포로 콘서트 홀 키타라">
                                         </div>
                                         <div class="category-list2__info">
+                                            <div class="chips">
+                                                <span class="chips__item">다큐</span>
+                                            </div>
                                             <span class="category-list2__title">삿포로 콘서트 홀<br> '키타라'</span>
-                                        </div>                                        
+                                        </div> 
                                     </a>
                                 </li>
                                 <li class="category-list2__item">
-                                    <a href="ctgr_depth3.html" class="category-list2__link">
+                                    <div class="checkbox">
+                                        <label class="checkbox__wrapper">
+                                            <span class="checkbox__title checkbox__title--blind">6</span>
+                                            <input type="checkbox" name="agree" class="checkbox--hidden checkbox--primary">
+                                            <div class="checkbox--show"></div>
+                                        </label>
+                                    </div>  
+                                    <a href="view_video.html" class="category-list2__link">
                                         <div class="category-list2__image">
                                             <img src="assets/img/ctgr_list_img02.jpg" alt="에스플러네이드 시어터스 온 더 베이">
                                         </div>
                                         <div class="category-list2__info">
-                                            <span class="category-list2__title">에스플러네이드 시어터스 온 더 베이</span>
-                                        </div>                                        
+                                            <div class="chips">
+                                                <span class="chips__item">오페라</span>
+                                            </div>
+                                            <span class="category-list2__title">에스플러네이드 시어터스 온 더 베이 에스플러네이드 시어터스 온 더 베이 에스플러네이드 시어터스 온 더 베이</span>
+                                        </div>  
                                     </a>
                                 </li>
                                 <li class="category-list2__item">
-                                    <a href="ctgr_depth3.html" class="category-list2__link">
+                                    <div class="checkbox">
+                                        <label class="checkbox__wrapper">
+                                            <span class="checkbox__title checkbox__title--blind">7</span>
+                                            <input type="checkbox" name="agree" class="checkbox--hidden checkbox--primary">
+                                            <div class="checkbox--show"></div>
+                                        </label>
+                                    </div>  
+                                    <a href="view_video.html" class="category-list2__link">
                                         <div class="category-list2__image">
                                             <img src="assets/img/ctgr_list_img03.jpg" alt="월트디즈니 콘서트홀">
                                         </div>
                                         <div class="category-list2__info">
+                                            <div class="chips">
+                                                <span class="chips__item">콘서트</span>
+                                            </div>
                                             <span class="category-list2__title">월트디즈니 콘서트홀</span>
-                                        </div>                                        
+                                        </div> 
                                     </a>
                                 </li>
                                 <li class="category-list2__item">
-                                    <a href="ctgr_depth3.html" class="category-list2__link">
+                                    <div class="checkbox">
+                                        <label class="checkbox__wrapper">
+                                            <span class="checkbox__title checkbox__title--blind">8</span>
+                                            <input type="checkbox" name="agree" class="checkbox--hidden checkbox--primary">
+                                            <div class="checkbox--show"></div>
+                                        </label>
+                                    </div>  
+                                    <a href="login.html" class="category-list2__link">
                                         <div class="category-list2__image">
                                             <img src="assets/img/ctgr_list_img04.jpg" alt="콘체르트하우스">
                                         </div>
                                         <div class="category-list2__info">
+                                            <div class="chips">
+                                                <span class="chips__item">다큐</span>
+                                            </div>
                                             <span class="category-list2__title">콘체르트하우스</span>
-                                        </div>                                        
+                                        </div>  
                                     </a>
                                 </li>
                             </ul>
