@@ -1,4 +1,13 @@
 "use strict";
+/** 브라우저의 스크린 Height 값을 구함 : 로그인, 회원가입 레이아웃에 사용
+function setScreenSize() {
+  let vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+setScreenSize();
+window.addEventListener('resize', () => setScreenSize());
+*/
+
 let sbartrigger = document.querySelector('.js-drawer-trigger');
 let sbarclose = document.querySelector('.js-drawer-close');
 let sidebar = document.querySelector('.sidebar');
@@ -59,11 +68,12 @@ class readMore {
       if (targetEvent.getAttribute('aria-checked') === 'true') {
           targetEvent.setAttribute('aria-checked', 'false')
           contentToggle.innerHTML = this.stateContent;
-          this.buttonToggle.innerHTML = '설명 줄이기 <i class="icon arrow-up"></i>'
+          this.buttonToggle.innerHTML = '설명 줄이기 <i class="icon arrow-up"></i>';
       } else {
           targetEvent.setAttribute('aria-checked', 'true')
-          contentToggle.innerHTML = `${this.stateContent.substring(0, 250)}...`
-          this.buttonToggle.innerHTML = '설명 더보기 <i class="icon arrow-down"></i>'
+          contentToggle.innerHTML = `${this.stateContent.substring(0, 250)}...`;
+          this.buttonToggle.innerHTML = '설명 더보기 <i class="icon arrow-down"></i>';
+          window.scrollTo({top: 0, behavior:'smooth'});
       }
   }
 }

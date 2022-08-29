@@ -107,7 +107,8 @@
         <div class="dim-layer"></div>
 
         <main class="views-wrap views-wrap--sticky">
-            <section class="section section--expansion">
+            <!-- 20220829 영상 영역 고정 및 콘텐츠 영역 스크롤 변경 시작 -->
+            <section class="section section--expansion js-fixvideo">
                 <div class="section__inner">
                     <div class="represent-image">
                         <div class="represent-image__cont">
@@ -117,8 +118,10 @@
                     </div>
                 </div>
             </section>
-            <section class="section views-info">
-                <div class="views-info__blur-bg" style="background-image: url(assets/img/view.jpg);"></div>
+            
+            <div class="represent-blurbg" style="background-image: url(assets/img/view.jpg);"></div>
+            
+            <section class="section views-info js-fixinfo">
                 <div class="section__inner">
                     <div class="chips">
                         <span class="chips__item chips__item--rounded">콘서트</span>
@@ -153,9 +156,19 @@
                     </div>
                 </div>
             </section>
+            <!-- 20220829 영상 영역 고정 및 콘텐츠 영역 스크롤 변경 끝 -->
         </main>
     </div> 
 
     <script src="assets/js/function.js"></script>
+    <!-- 20220829 영상 영역 고정 및 콘텐츠 영역 스크롤 변경 시작 -->
+    <script>
+        const videoHeight = document.querySelector('.js-fixvideo').clientHeight;
+
+        document.querySelector('.represent-blurbg').style.cssText += `position: fixed; top: ${videoHeight + 48}px;`;
+        document.querySelector('.js-fixvideo').style.cssText += `position: sticky; top: 48px; width: 100%; z-index: 5;`;
+        //document.querySelector('.js-fixinfo').style.cssText += `margin-top: ${videoHeight}px;`;
+    </script>
+    <!-- 20220829 영상 영역 고정 및 콘텐츠 영역 스크롤 변경 끝 -->
 </body>
 </html>

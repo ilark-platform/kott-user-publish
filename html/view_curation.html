@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/common.css">
 </head>
 
-<body>
+<body class="overflow-hidden">
     <div class="app-wrap">
         <header class="header">
             <div class="header__button">
@@ -107,7 +107,8 @@
         <div class="dim-layer"></div>
 
         <main class="views-wrap views-wrap--sticky">
-            <section class="section section--expansion">
+            <!-- 20220829 영상 영역 고정 및 재생목록 스크롤 변경 시작 -->
+            <section class="section section--expansion js-fixvideo">
                 <div class="section__inner">
                     <div class="represent-image">
                         <div class="represent-image__cont">
@@ -116,16 +117,19 @@
                     </div>
                 </div>
             </section>
-            <section class="section views-info">
-                <div class="views-info__blur-bg" style="background-image: url(assets/img/view.jpg);"></div>
+            <section class="section views-info js-fixinfo">
                 <div class="section__inner">
                     <div class="chips">
                         <span class="chips__item chips__item--rounded">큐레이션</span>
+                        <span>큐레이션 제목</span>
                     </div>
                     <h2 class="views-info__title">이고르 스트라빈스키의 작품들</h2>
                 </div>
             </section>
-            <section class="section mt16">
+
+            <div class="represent-blurbg" style="background-image: url(assets/img/view.jpg);"></div>
+            
+            <section class="section mt12 mb5 playlist">
                 <div class="section__inner">
                     <h2 class="section__title">재생목록</h2>
                     <div class="category-list4 mt6">
@@ -160,13 +164,51 @@
                                     <span class="category-list4__title">2022 빈 필하모닉 여름음악회</span>
                                 </div>                                        
                             </li>
+                            <li class="category-list4__item">
+                                <div class="category-list4__info">
+                                    <span class="category-list4__title">2022 빈 필하모닉 여름음악회</span>
+                                </div>                                        
+                            </li>
+                            <li class="category-list4__item">
+                                <div class="category-list4__info">
+                                    <span class="category-list4__title">2020 잘츠부르크 페스티벌</span>
+                                </div>                                        
+                            </li>
+                            <li class="category-list4__item">
+                                <div class="category-list4__info">
+                                    <span class="category-list4__title">로열 콘세르트헤바우 오케스트라 로열 콘세르트헤바우 오케스트라</span>
+                                </div>                                        
+                            </li>
+                            <li class="category-list4__item">
+                                <div class="category-list4__info">
+                                    <span class="category-list4__title">David Garrett - Greatest Hits at the Arena Greatest Hits at the Arena</span>
+                                </div>                                        
+                            </li>
+                            <li class="category-list4__item">
+                                <div class="category-list4__info">
+                                    <span class="category-list4__title">2022 빈 필하모닉 여름음악회</span>
+                                </div>                                        
+                            </li>
                         </ul>
                     </div>
                 </div>
             </section>
+            <!-- 20220829 영상 영역 고정 및 재생목록 스크롤 변경 끝 -->
         </main>
     </div> 
 
     <script src="assets/js/function.js"></script>
+    <!-- 20220829 영상 영역 고정 및 재생목록 스크롤 변경 시작 -->
+    <script>
+        const videoHeight = document.querySelector('.js-fixvideo').clientHeight;
+        const infoHeight = document.querySelector('.js-fixinfo').clientHeight;
+        const playlistPos = (videoHeight + infoHeight) + 48;
+
+        document.querySelector('.represent-blurbg').style.cssText += `position: fixed; top: ${videoHeight + 48}px;`;
+        document.querySelector('.js-fixvideo').style.cssText += `position: sticky; top: 48px; width: 100%; z-index: 5;`;
+        document.querySelector('.js-fixinfo').style.cssText += `position: sticky; top: ${videoHeight}px; width: 100%; z-index: 5;`;
+        document.querySelector('.playlist').style.cssText += `position: absolute; top: ${playlistPos}px; bottom: 0; width: 100%; overflow-y: auto;`;
+    </script>
+    <!-- 20220829 영상 영역 고정 및 재생목록 스크롤 변경 끝 -->
 </body>
 </html>

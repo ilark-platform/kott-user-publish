@@ -1,0 +1,697 @@
+@import '../abstracts/mixins';
+/* ------------------------------ COMMON ------------------------------ */
+.color-primary {
+  color: $color-primary;
+}
+.color-secondary {
+  color: $color-secondary;    
+}
+.color-red {
+  color: $color-red;
+}
+//로고
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__link {
+    display: block;
+  }
+  
+  &__image {
+    @include size(150px, $height: 66px);
+    
+    img {
+      @include size(150px, $height: 66px);
+    }
+  }
+
+  &__title {
+      color: $color-primary;
+      font-size: 1.8rem;
+      font-weight: 700;
+  }
+}
+
+//아이콘
+.icon {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+	
+	&.close {
+	  background-image: icon(close);
+	}
+	
+	&.arrow-left {
+    background-image: icon(arrow-left);
+	}
+
+	&.arrow-right {
+    background-image: icon(arrow-right);
+	}
+
+	&.arrow-up {
+    width: 24px;
+	  height: 24px;
+		background-image: icon(arrow-up);
+	}
+	&.arrow-down {
+    width: 24px;
+	  height: 24px;
+		background-image: icon(arrow-down);
+	}
+	&.search {
+		width: 20px;
+		height: 20px;
+		background-image: icon(search,);
+	}
+}
+
+// 헤더 메뉴 아이콘 및 사이드바 메뉴 닫기 버튼
+.burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+   
+  &__line {
+    display: block;
+    @include size(20px, $height: 2px);
+    border-radius: 3px;
+  }
+
+  &--menu {
+    height: 16px;
+
+    .burger__line {
+      background-color: $color-primary;
+    }
+  }
+
+  &--close {
+    @include size(23px, $height: 23px);
+    flex-direction: row;
+    justify-content: center;
+
+    .burger__line {
+      position: absolute;
+      @include size(2px, $height: 23px);
+      background-color: $color-white;
+      &:first-child {
+        transform: rotate(45deg);
+      }
+      &:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+//알람 
+.badge {
+  @include position(absolute, $top: 3px, $left: 19px);
+  //@include size(15px, $height: 15px);
+  min-width: 9px;
+  height: 15px;
+  font-size: 1.1rem;
+  line-height: 15px;
+  padding: 0 3px;
+  text-align: center;
+  color: $color-white;
+  background-color: $color-red;
+  border-radius: 15px;
+  border: 1px solid $color-white;
+  box-sizing: content-box;
+  z-index: 2;
+  transition: all .3s;
+}
+
+//단락 나눔
+.divider {
+  display: block;
+  width: 100%;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: $border;
+}
+
+.space-line {
+  position: relative;
+  display: inline-block;
+  margin: 0 1rem;
+  width: 1px;
+  height: 8px;
+  background-color: $color-gray-300;
+}
+
+
+
+
+/* ------------------------------ HEADER ------------------------------ */
+.header {
+  @include position(fixed, $top: 0, $right: 0, $left: 0);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include size(100%, $height: 48px);
+  padding-right: 1rem;
+  background-color: $color-black-100;
+  transition: all .3s;
+  z-index: 100;
+
+  &::after {
+    content: '';
+    @include position(absolute, $bottom: 0, $right: 0, $left: 0);
+    height: 1px;
+    background-color: $color-bline-100;
+  }
+
+  &__logo {
+    margin-left: 3rem;
+
+    .logo {
+      flex-direction: row;
+
+      .logo__image {
+        @include size(75px, $height: 33px);
+        margin-right: 2rem;
+
+        img {
+          @include size(75px, $height: 33px);
+        }
+      }
+    }   
+  }
+
+  &__button {
+    .h-btn {
+      display: block;
+      padding: 5px;
+      cursor: pointer;
+    }
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $color-white;
+
+  }
+
+  &__drawer-trigger {
+    padding: 12px 10px;
+    cursor: pointer;
+  }
+}
+
+
+/* ------------------------------ FOOTER ------------------------------ 
+.footer {
+  @include position(fixed, $bottom: 0, $right: 0, $left: 0);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include size(100%, $height: auto);
+  padding: 1rem;
+  background-color: $color-black-100;
+  z-index: 100;
+}
+*/
+
+
+/* ------------------------------ SUB COMMON ------------------------------ */
+.views-wrap {
+  padding: 76px 0;
+}
+
+.section {
+  padding: 0 2rem;
+
+  &__inner {
+
+    &--roundbox {
+      padding: 2rem;
+      background-color: $color-black-200;
+      border-radius: $border-radius;
+    }
+  }
+  
+  &__title {
+    @include font-size(20, 12, 700);
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+.container {
+  &__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 15rem 4rem 7rem;
+  
+    @include tablet { 
+      /*브라우저 사이즈 1023px 이하일때*/
+      padding: 13rem 2rem 6rem;
+    }
+
+    @include mobile { 
+      /*브라우저 사이즈 767px 이하일때*/
+      padding: 10rem 2rem 4rem;
+    }
+  }
+}
+
+.l-row { 
+  display: flex;
+  @include size(100%, $height: auto);
+}
+
+.l-col {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  @include size(100%, $height: auto);
+
+  &--direction-column {
+    flex-direction: column;  
+  }
+
+  &--justify-between {
+    justify-content: space-between;
+  }
+
+  &--items-center {
+    align-items: center;
+  }
+}
+
+// --- 서브 타이틀 ------------------------------------------------------------------
+.breadcrumbs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  &__title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: $color-black-100;
+  }
+
+  @include tablet { 
+    /*브라우저 사이즈 1023px 이하일때*/
+    &__title {
+      font-size: 2.6rem;
+    }    
+  }
+
+  @include mobile { 
+    /*브라우저 사이즈 767px 이하일때*/
+    &__title {
+      font-size: 2rem;
+    }
+  }
+}
+
+.subheaders {
+  margin: 2rem 0;
+
+  &__title {
+    display: flex;
+    align-items: center;
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: $color-black-100;
+  }
+
+  @include tablet { 
+    /*브라우저 사이즈 1023px 이하일때*/
+    margin: 1.5rem 0;
+
+    &__title {
+      font-size: 2rem;
+    }    
+  }
+
+  @include mobile { 
+    /*브라우저 사이즈 767px 이하일때*/
+    margin: 1.2rem 0;
+
+    &__title {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+
+
+/* ------ 글로벌 메뉴 ----- */
+// --- 헤더 메뉴, 사이드바 메뉴 사용 ------------------------------------------------------------------
+.global-nav {
+  &__list {
+    padding: 2rem;
+  }
+
+  &__item {
+    margin-bottom: 8px;
+    
+    &.collapse {
+      margin-top: 1.8rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid $color-gray-200;
+    }
+    /*
+    .collapse__link {
+    }
+    */
+    .collapse__arrow {
+      margin-left: auto;
+      margin-right: 0;
+      color: $color-gray-700;
+    }
+    .collapse__list {
+      display: none;
+      padding: 8px 8px 8px 45px;
+    }
+    .collapse__list.collapse__list--open {
+      display: block;
+    }
+    .collapse__sublink {
+      display: block;
+      font-size: 1.4rem;
+      padding: 5px 0;
+      color: $color-gray-700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all .3s;
+    }
+    .collapse__sublink:hover, .collapse__sublink:focus {
+      color: $color-primary;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @include font-size(16, 14, 500);
+    padding: 1rem;
+    color: $color-white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover, &:focus {
+      color: $color-primary;
+      i {
+        color: $color-primary; 
+      }
+    }
+
+    &--open {
+      color: $color-primary;
+      i {
+        color: $color-primary; 
+      }
+      .collapse__arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+
+/* ------ SIDEBAR ----- */
+.dim-layer {
+  @include position(fixed, $top: 0, $left: 0);
+  @include size($width: 100vw, $height: 100vh);
+  display: none;
+  background-color: rgba(0,0,0,.7);
+  animation: fade 0.5s;
+  z-index: 199;
+  
+  &.is-active {
+    display: block;
+  }
+}
+
+.sidebar {
+  @include position(fixed, $top: 0, $right: 0);
+  height: 100vh;
+  max-height: 100vh;
+  width: 100%;
+  max-width: 86%;
+  min-width: 270px;
+  background-color: $color-gray-100;
+  transition: all .3s ease-in-out;
+  transform: translate(100%, 0px);
+  z-index: 200;
+
+  &.is-active {
+    transition: all .3s ease-in-out;
+    transition-delay: .3s;
+    transform: translate(0%, 0px);
+    box-shadow: $box-shadow;
+  }  
+
+  &__close {
+    @include position(absolute, $top: 3rem, $right: 3.5rem);
+    cursor: pointer;
+    z-index: 3;
+  }
+
+  &__wrapper {
+    @include size(100%, $height: 100%);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    @include size(100%, $height: 80px);
+    padding: 0 3rem;
+    border-bottom: $border;
+
+    .logo {
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      &__image {
+        @include size(75px, $height: 33px);
+        
+        img {
+          @include size(75px, $height: 33px);
+        }
+      }
+    }
+  }
+
+  .global-nav {
+    min-height: 480px;
+  }
+
+  &__footer {
+    @include position(absolute, $bottom: 0, $left: 0);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @include size(100%, $height: 60px);
+    background-color: $color-white;
+    padding: 0 3rem;
+    border-top: $border; 
+    z-index: 2;   
+  }
+
+  @include tablet { 
+    /*브라우저 사이즈 1023px 이하일때*/
+    &__header {
+      height: 70px;
+      padding: 0 2rem;
+    }
+  }
+
+  @include mobile { 
+    /*브라우저 사이즈 767px 이하일때*/
+    &__header {
+      height: 60px;
+
+      .logo {
+        &__title {
+          font-size: 1.6rem;  
+        }
+      }
+    }
+  }
+}
+
+
+
+// --- 버튼 영역 공통 ------------------------------------------------------------------
+.btn-wrapper {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  margin-top: 3rem;
+  
+  &__link {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: $color-black-100;
+    text-decoration: none;
+    transition: all .3s;
+
+    &:hover {
+      color: $color-gray-600;
+    }
+
+    i {
+      font-size: 2rem;
+      margin-right: 3px;
+    }
+  }
+}
+
+
+
+
+/* ------ CHIPS ----- */
+.chips {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    height: 23px;
+    font-size: 1.2rem;
+    color: $color-primary;
+    padding: 0 1.2rem;
+    margin-right: 6px;
+    border: 1px solid $color-primary;
+    border-radius: 23px;
+
+    &--discontinued {
+      color: $color-white;
+      border: 1px solid $color-gray-500;
+      background-color: $color-gray-500;
+    }
+  }
+}
+
+
+/* ------ 해시태그 ----- */
+.hashtag {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    height: 28px;
+    font-size: 1.2rem;
+    color: $color-gray-600;
+    padding: 0 10px;
+    margin-right: 6px;
+    border: 1px solid $color-gray-500;
+    border-radius: 28px;
+  }
+}
+
+
+
+
+
+/* 페이지네이션 */
+.pagination {
+  margin: 4rem 0 1rem;
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    margin: 0 5px;
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;    
+    font-size: 1.2rem;
+    color: $color-gray-700;
+    border-radius: $border-radius;
+    text-decoration: none;
+    background-color: $color-white;
+    box-shadow: 1px 1px 5px -2px $color-gray-700;
+    transition: all .3s;
+
+    &--active {
+      color: $color-white;
+      background-color: $color-primary;  
+    }
+  }
+}
+
+
+
+
+
+
+
+
+/* 펼침 */
+.js-showhide {
+  cursor: pointer;
+
+  &__arrow {
+    margin-left: 1rem;
+    font-size: 2.4rem;
+    color: $color-gray-900;
+    transition: all .3s;
+  }
+  &.is-open {
+    .js-showhide__arrow {
+      transform: rotate(180deg);
+    }  
+  }
+}
+
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+@include margin-classes;
+@include padding-classes;

@@ -21,51 +21,6 @@
       color: $color-white;
     }
   }
-
-  a {
-    color: $color-primary;
-  }
-
-  b {
-    display: block;
-    @include font-size(15, 16, 500);
-    color: rgba($color-white, 0.9);
-  }
-}
-
-.txtlist-ul {
-  li {
-    position: relative;
-    @include font-size(13, 16);
-    color: rgba($color-white, 0.6);
-  }
-  li + li {
-    margin-top: 5px;
-  }
-}
-
-.txttable {
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: rgba($color-white, 0.5);
-
-  th {
-    padding: 1rem 1rem;
-    background-color: #212121;
-    @include font-size(12, 16, 500);
-  }
-  td {
-    @include font-size(12, 16);
-    padding: 1rem;
-    border-bottom: solid 1px rgb(30, 30, 30);
-    border-left: 1px solid rgb(30, 30, 30);
-    white-space: initial;
-
-    &:first-child {
-      border-left: none;
-    }
-  }
-
 }
 
 
@@ -172,60 +127,10 @@
 
 /* ------------------------------ SEARCH ------------------------------ */
 .search-form {
-  position: relative;
   
   .icon.search {
     margin-left: 1.2rem;
     margin-top: 0.2rem;
-  }
-}
-
-.suggestion {
-  position: absolute;
-  width: 100%;
-  margin-top: 3px;
-  border: 1px solid rgba($color-gray-300, 0.5);
-  background-color: rgba($color-gray-200, 1);
-  border-radius: $border-radius;
-  box-shadow: 0 5px 20px rgba($color-black-100, 0.6);
-  padding: 1.6rem 2rem;
-  z-index: 10;
-  animation: suggestionShow 0.4s ease-out;
-
-  &--hidden { 
-    display: none;
-  }
-
-  &__inner {
-    max-height: 29vh;
-    overflow-y: auto;
-  }
-
-  &__description {
-    width: 100%;
-    @include font-size(14, 17, 400);
-    text-align: center;
-    color: rgba($color-white, 1);
-  }
-
-  &__item {
-    position: relative;
-    display: flex;
-    width: 100%;
-    @include font-size(15, 16, 400);
-    padding: 8px 0 10px;
-    border-bottom: 1px solid rgba($color-gray-300, 0.5);
-  }
-}
-
-@keyframes suggestionShow {
-  0% {
-    opacity: 0;
-    margin-top: 10%;
-  }
-  100% {
-    opacity: 1;
-    margin-top: 3px;
   }
 }
 
@@ -706,7 +611,7 @@
     @include size(100%, $height: 48px);
     @include font-size(20, 12, 700);
     color: rgba($color-white, 0.6);
-    background-color: rgba($color-black-100, 1);
+    background-color: rgba($color-black-100, .9);
     border-bottom: 1px solid $color-bline-100;
     z-index: 2;
   }
@@ -1013,18 +918,8 @@
 }
 
 // --- 큐레이션 재생목록 ------------------------------------------------------------------
-.playlist {
-  -webkit-overflow-scrolling: touch;
-  -ms-overflow-style: none; 
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
 .category-list4 {
-  
+
   &__itemlist {
     display: flex;
     flex-direction: column;
@@ -1403,38 +1298,27 @@
   }
 }
 
-
-.represent-blurbg {
-  @include position(absolute, $left: 0); 
-  width: 100%;
-  height: 200px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  filter: blur(21px);
-  opacity: .5;
-  overflow: hidden;
-
-  &::after {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%; height: 100%;
-    content: '';
-    background: linear-gradient(0deg, rgba(18,18,21,1) 0%, rgba(18,18,21,0) 100%);
-    z-index: 1;
-  }
-}
-
 // --- 영상 정보 ------------------------------------------------------------------
 .views-info {
-  //transition: all .3s ease;
-  &.fixed {
-    background-color: $color-black-100;
-    //background: linear-gradient(180deg, rgba(18,18,21,1) 75%, rgba(18,18,21,0) 100%);
-    padding-bottom: 3rem;
 
-    .chips {
-      display: none;
+  &__blur-bg {
+    @include position(absolute, $top: 0, $left: 0); 
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(21px);
+    opacity: .5;
+    overflow: hidden;
+  
+    &::after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%; height: 100%;
+      content: '';
+      background: linear-gradient(0deg, rgba(18,18,21,1) 0%, rgba(18,18,21,0) 100%);
+      z-index:1;
     }
   }
 
