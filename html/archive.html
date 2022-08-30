@@ -115,9 +115,33 @@
                                 <label for="search-text" class="field-group__label field-group__label--blind">공연아카이브 검색</label>
                                 <div class="field-group__cont">
                                     <i class="icon search"></i>
-                                    <input type="text" name="search-text" class="field-group__input" placeholder="공연, 영상, 아티스트 등 검색">
+                                    <input id="search" type="text" name="search-text" class="field-group__input" placeholder="공연, 영상, 아티스트 등 검색">
                                 </div>
                             </div>
+
+                            <!-- 20220829 검색결과 추가 시작 -->
+                            <div class="suggestion suggestion--hidden">
+                                <!-- 검색창 클릭시 
+                                <div class="suggestion__inner">
+                                    <p class="suggestion__description">K-OTT의 공연 제목, 아티스트, 작곡가 등의<br> 영상 키워드로 검색하세요.<br><br>한글로 검색하세요.</p>        
+                                </div>
+                                -->
+                                
+                                <!-- 검색창 입력시 -->
+                                <div class="suggestion__inner">
+                                    <ul class="suggestion__list">
+                                        <li class="suggestion__item">2022 빈 필하모닉 여름음악회</li>
+                                        <li class="suggestion__item">2022 발트뷔네 콘서트</li>
+                                        <li class="suggestion__item">2022 베를린 필 하모닉 갈라 프롬 베를린 베를린 필 하모닉 갈라 프롬 베를린</li>
+                                        <li class="suggestion__item">2022 빈 필하모닉 신년음악회</li>
+                                        <li class="suggestion__item">2022 빈 필하모닉 여름음악회</li>
+                                        <li class="suggestion__item">2022 발트뷔네 콘서트</li>
+                                        <li class="suggestion__item">2022 베를린 필 하모닉 갈라 프롬 베를린 베를린 필 하모닉 갈라 프롬 베를린</li>
+                                        <li class="suggestion__item">2022 빈 필하모닉 신년음악회</li>
+                                    </ul>        
+                                </div>
+                            </div> 
+                            <!-- 20220829 검색결과 추가 끝 -->
                         </div>
                         <div class="filter-dropdown mt1">
                             <div class="filter-dropdown__inner">
@@ -131,7 +155,7 @@
                                     <li class="filter-dropdown__item">인기순</li>
                                 </ul>
                             </div>
-                        </div> 
+                        </div>
                     </div>       
                 </div>
             </section>
@@ -201,7 +225,7 @@
                                             <div class="chips">
                                                 <span class="chips__item">다큐</span>
                                             </div>
-                                            <span class="category-list2__title">삿포로 콘서트 홀<br> '키타라'</span>
+                                            <span class="category-list2__title">삿포로 콘서트 홀 '키타라'</span>
                                         </div>                                        
                                     </a>
                                 </li>
@@ -253,5 +277,19 @@
     </div> 
 
     <script src="assets/js/function.js"></script>
+    <!-- 20220829 검색결과 추가 시작 -->
+    <script>
+        var search = document.querySelector('#search');
+        var listContainer = document.querySelector('.suggestion');
+
+        search.onfocus = function() {
+            listContainer.classList.remove('suggestion--hidden')                
+            }
+        search.onblur = function() {
+            this.value = null; 
+            listContainer.classList.add('suggestion--hidden');
+        }
+    </script>
+    <!-- 20220829 검색결과 추가 끝 -->
 </body>
 </html>

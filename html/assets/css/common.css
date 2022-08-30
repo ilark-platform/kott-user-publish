@@ -25,6 +25,8 @@ article, aside, dialog, figure, footer, header, hgroup, nav, section, main {
 html {
   font-size: 62.5%;
   background-color: #121215;
+  /*height: calc(var(--vh, 1vh) * 100);*/
+  height: -webkit-fill-available;
 }
 
 body {
@@ -35,7 +37,9 @@ body {
   letter-spacing: -0.0375em;
   color: #ffffff;
   max-width: 768px;
+  /*height: calc(var(--vh, 1vh) * 100);*/
   min-height: 100vh;
+  min-height: -webkit-fill-available;
   margin: 0 auto;
   background-color: #121215;
   word-break: keep-all;
@@ -211,6 +215,58 @@ input[type=number] {
   color: #ffffff;
 }
 
+.text-box a {
+  color: #caa973;
+}
+
+.text-box b {
+  display: block;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.txtlist-ul li {
+  position: relative;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.txtlist-ul li + li {
+  margin-top: 5px;
+}
+
+.txttable {
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.txttable th {
+  padding: 1rem 1rem;
+  background-color: #212121;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.txttable td {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-weight: 400;
+  padding: 1rem;
+  border-bottom: solid 1px #1e1e1e;
+  border-left: 1px solid #1e1e1e;
+  white-space: initial;
+}
+
+.txttable td:first-child {
+  border-left: none;
+}
+
 /* ------------------------------ FORM ------------------------------ */
 .form {
   display: block;
@@ -322,9 +378,81 @@ input[type=number] {
 }
 
 /* ------------------------------ SEARCH ------------------------------ */
+.search-form {
+  position: relative;
+}
+
 .search-form .icon.search {
   margin-left: 1.2rem;
   margin-top: 0.2rem;
+}
+
+.suggestion {
+  position: absolute;
+  width: 100%;
+  margin-top: 3px;
+  border: 1px solid rgba(70, 70, 76, 0.5);
+  background-color: #252529;
+  border-radius: 2.2222vw;
+  -webkit-box-shadow: 0 5px 20px rgba(18, 18, 21, 0.6);
+          box-shadow: 0 5px 20px rgba(18, 18, 21, 0.6);
+  padding: 1.6rem 2rem;
+  z-index: 10;
+  -webkit-animation: suggestionShow 0.4s ease-out;
+          animation: suggestionShow 0.4s ease-out;
+}
+
+.suggestion--hidden {
+  display: none;
+}
+
+.suggestion__inner {
+  max-height: 29vh;
+  overflow-y: auto;
+}
+
+.suggestion__description {
+  width: 100%;
+  font-size: 1.4rem;
+  line-height: 1.7;
+  font-weight: 400;
+  text-align: center;
+  color: white;
+}
+
+.suggestion__item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  font-weight: 400;
+  padding: 8px 0 10px;
+  border-bottom: 1px solid rgba(70, 70, 76, 0.5);
+}
+
+@-webkit-keyframes suggestionShow {
+  0% {
+    opacity: 0;
+    margin-top: 10%;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 3px;
+  }
+}
+
+@keyframes suggestionShow {
+  0% {
+    opacity: 0;
+    margin-top: 10%;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 3px;
+  }
 }
 
 /* ------------------------------ 검색 필터 Drop Down ------------------------------ */
@@ -943,7 +1071,7 @@ input[type=number] {
   line-height: 1.2;
   font-weight: 700;
   color: rgba(255, 255, 255, 0.6);
-  background-color: rgba(18, 18, 21, 0.9);
+  background-color: #121215;
   border-bottom: 1px solid #252529;
   z-index: 2;
 }
@@ -1318,6 +1446,16 @@ input[type=number] {
   scroll-snap-align: none;
   max-width: 162px;
   margin-bottom: 0;
+}
+
+.playlist {
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.playlist::-webkit-scrollbar {
+  display: none;
 }
 
 .category-list4__itemlist {
@@ -1830,9 +1968,9 @@ input[type=number] {
   z-index: 3;
 }
 
-.views-info__blur-bg {
+.represent-blurbg {
   position: absolute;
-  top: 0;
+  top: auto;
   right: auto;
   bottom: auto;
   left: 0;
@@ -1846,7 +1984,7 @@ input[type=number] {
   overflow: hidden;
 }
 
-.views-info__blur-bg::after {
+.represent-blurbg::after {
   position: absolute;
   left: 0;
   top: 0;
@@ -1856,6 +1994,15 @@ input[type=number] {
   background: -webkit-gradient(linear, left bottom, left top, from(#121215), to(rgba(18, 18, 21, 0)));
   background: linear-gradient(0deg, #121215 0%, rgba(18, 18, 21, 0) 100%);
   z-index: 1;
+}
+
+.views-info.fixed {
+  background-color: #121215;
+  padding-bottom: 3rem;
+}
+
+.views-info.fixed .chips {
+  display: none;
 }
 
 .views-info .section__inner {
@@ -2711,7 +2858,6 @@ input[type=number] {
   z-index: 2;
 }
 
-/* ------------------------------ MAIN ------------------------------ */
 @-webkit-keyframes fade {
   0% {
     opacity: 0;
@@ -2720,6 +2866,7 @@ input[type=number] {
     opacity: 1;
   }
 }
+
 @keyframes fade {
   0% {
     opacity: 0;
