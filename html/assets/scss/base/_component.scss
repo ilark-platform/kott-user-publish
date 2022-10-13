@@ -961,6 +961,9 @@
     align-items: flex-end;
     padding: 1.2rem;
     z-index: 2;
+    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+    overflow: hidden;
   }
 
   &__title {

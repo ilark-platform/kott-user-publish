@@ -44,10 +44,13 @@
     @include size(20px, $height: 20px);
 		background-image: icon(search);
 	}
-
   &.home {
     @include size(20px, $height: 20px);
 		background-image: icon(home);
+  }
+  &.home2 {
+    @include size(30px, $height: 30px);
+		background-image: icon(home2);
   }
   &.category {
     @include size(20px, $height: 20px);
@@ -223,6 +226,8 @@
   }
 
   &__button {
+    display: flex;
+
     .h-btn {
       display: block;
       padding: 5px;
@@ -233,6 +238,8 @@
   &__title {
     max-width: 210px;
     @include font-size(15, 10, 500);
+    margin-left: -40px; 
+    padding: 0 20px;
     color: $color-white;
     white-space: nowrap;
     overflow: hidden;

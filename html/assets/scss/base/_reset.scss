@@ -20,7 +20,7 @@ html {
   font-size: 62.5%;
   background-color: #121215;
   /*height: calc(var(--vh, 1vh) * 100);*/
-  height: -webkit-fill-available;
+  /*height: -webkit-fill-available;*/
 }
 body {
   font-family: 'NotoSansCJKkr';
@@ -29,10 +29,10 @@ body {
   font-weight: 400;
   letter-spacing: -0.0375em;
   color: #ffffff;
-  max-width: 768px;
+  max-width: 100%;
   /*height: calc(var(--vh, 1vh) * 100);*/
   min-height: 100vh;
-  min-height: -webkit-fill-available;
+  /*min-height: -webkit-fill-available;*/
   margin: 0 auto;
   background-color: #121215;
   word-break: keep-all;

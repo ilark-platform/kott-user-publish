@@ -36,7 +36,7 @@ body {
   font-weight: 400;
   letter-spacing: -0.0375em;
   color: #ffffff;
-  max-width: 768px;
+  max-width: 100%;
   /*height: calc(var(--vh, 1vh) * 100);*/
   min-height: 100vh;
   /*min-height: -webkit-fill-available;*/
@@ -1388,6 +1388,9 @@ input[type=number] {
           align-items: flex-end;
   padding: 1.2rem;
   z-index: 2;
+  border-bottom-right-radius: 2.2222vw;
+  border-bottom-left-radius: 2.2222vw;
+  overflow: hidden;
 }
 
 .category-list3__title {
@@ -2311,6 +2314,12 @@ input[type=number] {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 8 8' xmlns='http://www.w3.org/2000/svg' xml:space='preserve' style='fill:%23ffffff; fill-rule:evenodd; clip-rule:evenodd; stroke-linejoin:round; stroke-miterlimit:2'%3E%3Cpath d='m150.598 313.094 28.561-16.666 28.561 16.666v27.619h-25.143v-22.458h-24.106v22.458h-7.873v-27.619Zm-4 35.619h65.122c2.209 0 4-1.791 4-4v-33.916c0-1.423-.755-2.738-1.984-3.455l-32.561-19a3.9996 3.9996 0 0 0-4.032 0l-32.561 19a4.001 4.001 0 0 0-1.984 3.455v33.916c0 2.209 1.791 4 4 4Z' style='fill-rule:nonzero' transform='matrix(.09596 0 0 .10538 -13.6321 -30.1075)'/%3E%3C/svg%3E");
 }
 
+.icon.home2 {
+  width: 30px;
+  height: 30px;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 1000 1000' xmlns='http://www.w3.org/2000/svg' xml:space='preserve' style='fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:2'%3E%3Cpath d='M1726 1718.5v-19c0-4.42-3.58-8-8-8h-1c-4.42 0-8 3.58-8 8v19' style='fill:none;stroke:%23ffffff;stroke-width:6px' transform='translate(-14072.5 -13815.6) scale(8.49843)'/%3E%3Cpath d='M1689 1679v29.5c0 5.52 4.48 10 10 10h37.5c5.52 0 10-4.48 10-10V1679' style='fill:none;stroke:%23ffffff;stroke-width:6px;stroke-linecap:round' transform='translate(-14072.5 -13815.6) scale(8.49843)'/%3E%3Cpath d='m1679 1686.5 37.79-37.79c.39-.39 1.03-.39 1.42 0l37.79 37.79' style='fill:none;stroke:%23ffffff;stroke-width:6px;stroke-linecap:round' transform='translate(-14072.5 -13798.6) scale(8.49843)'/%3E%3C/svg%3E");
+}
+
 .icon.category {
   width: 20px;
   height: 20px;
@@ -2547,6 +2556,12 @@ input[type=number] {
   color: #caa973;
 }
 
+.header__button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .header__button .h-btn {
   display: block;
   padding: 5px;
@@ -2558,6 +2573,8 @@ input[type=number] {
   font-size: 1.5rem;
   line-height: 1;
   font-weight: 500;
+  margin-left: -40px;
+  padding: 0 20px;
   color: #ffffff;
   white-space: nowrap;
   overflow: hidden;
