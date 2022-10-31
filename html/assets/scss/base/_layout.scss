@@ -44,6 +44,10 @@
     @include size(20px, $height: 20px);
 		background-image: icon(search);
 	}
+  &.search2 {
+    @include size(20px, $height: 20px);
+    background-image: icon(search, 'caa973');
+	}
   &.home {
     @include size(20px, $height: 20px);
 		background-image: icon(home);
@@ -236,9 +240,8 @@
   }
 
   &__title {
-    max-width: 210px;
+    max-width: 196px;
     @include font-size(15, 10, 500);
-    margin-left: -40px; 
     padding: 0 20px;
     color: $color-white;
     white-space: nowrap;
@@ -246,9 +249,20 @@
     text-overflow: ellipsis;
   }
 
+  &__control {
+    display: flex;
+  }
+
+  &__quest {
+    padding: 10px;
+    cursor: pointer;
+    height: 40px;
+  }
+
   &__drawer-trigger {
     padding: 12px 10px;
     cursor: pointer;
+    height: 40px;
   }
 }
 
