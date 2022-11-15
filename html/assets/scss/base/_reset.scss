@@ -48,6 +48,12 @@ ul {
 em, i {
   font-style: normal;
 }
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed; 
+  width:100%;
+}
 legend {
   display: none;
   font-size: 0;

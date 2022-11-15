@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>계정찾기</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/pc.css">
+</head>
+
+<body>
+    <div class="app-wrap">
+        <header class="pc-header">
+            <div class="pc-header__top">
+                <ul class="pc-header__auth">
+                    <li><a href="login.html">로그인</a></li>
+                    <li><a href="signup.html">회원가입</a></li>
+                    <li><span>작곡가님 환영합니다</span></li>
+                    <li><a href="#">로그아웃</a></li>
+                </ul>    
+            </div>
+            <div class="pc-header__bottom">
+                <div class="pc-header__logo">
+                    <h1>ORFEO</h1>
+                </div>   
+                <nav class="pc-navbar">
+                    <ul class="pc-navbar__menu">
+                        <li class="pc-navbar__item">
+                            <a href="main.html" class="pc-navbar__link">
+                                <span class="pc-navbar__title">홈</span>
+                            </a>
+                        </li>
+                        <li class="pc-navbar__item" data-menu="menu-1">
+                            <div class="pc-navbar__link">
+                                <span class="pc-navbar__title">카테고리</span>
+                            </div>
+                            <div class="pc-navbar__subwrapper" id="menu-1">
+                                <ul class="pc-navbar__submenu">
+                                    <li class="pc-navbar__subitem">
+                                        <a href="ctgr_composer.html" class="pc-navbar__sublink">작곡가</a>                                    
+                                    </li>
+                                    <li class="pc-navbar__subitem">
+                                        <a href="ctgr_conductor.html" class="pc-navbar__sublink">지휘자</a>                                    
+                                    </li>
+                                    <li class="pc-navbar__subitem">
+                                        <a href="ctgr_orchestra.html" class="pc-navbar__sublink">오케스트라</a>
+                                    </li>
+                                    <li class="pc-navbar__subitem">
+                                        <a href="ctgr_artist.html" class="pc-navbar__sublink">아티스트</a>
+                                    </li>
+                                    <li class="pc-navbar__subitem">
+                                        <a href="ctgr_age.html" class="pc-navbar__sublink">시대</a>
+                                    </li>
+                                    <li class="pc-navbar__subitem">
+                                        <a href="ctgr_country.html" class="pc-navbar__sublink">국가</a>
+                                    </li>
+                                    <li class="pc-navbar__subitem">
+                                        <a href="ctgr_theater.html" class="pc-navbar__sublink">극장</a>
+                                    </li>
+                                    <li class="pc-navbar__subitem">
+                                        <a href="ctgr_genre.html" class="pc-navbar__sublink">장르</a>
+                                    </li>
+                                </ul>    
+                            </div>                
+                        </li>
+                        <li class="pc-navbar__item">
+                            <a href="article_list.html" class="pc-navbar__link">
+                                <span class="pc-navbar__title">읽을거리</span>                            
+                            </a>
+                        </li>
+                        <li class="pc-navbar__item">
+                            <a href="menu_my.html" class="pc-navbar__link">
+                                <span class="pc-navbar__title">MY</span>
+                            </a>
+                        </li>
+                        <li class="pc-navbar__item">
+                            <a href="menu_cscenter.html" class="pc-navbar__link">
+                                <span class="pc-navbar__title">고객센터</span>
+                            </a>
+                        </li>
+                    </ul>    
+                </nav>
+                <div id="header-search" class="pc-header__search">
+                    <div class="search-button">
+                        <a href="#" class="search-toggle" data-selector="#header-search"><i class="icon search"></i></a>
+                    </div>
+                    
+                    <div class="search-form">
+                        <div class="search-form__content">
+                            <div class="field-group">
+                                <label for="search-text" class="field-group__label field-group__label--blind">공연아카이브 검색</label>
+                                <div class="field-group__cont">
+                                    <input id="search" type="text" name="search-text" class="field-group__input" placeholder="공연, 영상, 아티스트 등 검색">
+                                    <button type="submit"><i class="icon search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <main class="views-wrap">
+            <section class="section">
+                <div class="section__inner section__inner--sm">
+                    <h2 class="section__title">계정찾기</h2>
+                    <button class="btn btn--full btn--primary mt6" type="button">본인인증하기</button>
+                    <div class="text-box rounded mt6">
+                        <p class="text-center">
+                            고객님의 정보와 일치하는 이메일은<br>
+                            <span>test@test.com</span> 입니다.<br>
+                            <span class="divider">가입일자 : 2021-08-10</span>
+                        </p>
+                    </div>
+                    <div class="section__footer divider mt10 pt5">
+                        <a href="searchpassword.html" class="textbtn">비밀번호 찾기</a>
+                        <span class="space-line"></span>
+                        <a href="login.html" class="textbtn">로그인</a>
+                    </div>                    
+                </div>
+            </section>
+        </main>
+
+        <footer class="pc-footer">
+            <div class="pc-footer__inner">
+                <div class="pc-footer__menu">
+                    <a href="#">이용약관</a>
+                    <a href="#">유료이용약관</a>
+                    <a href="#">개인정보 취급</a>
+                    <a href="#">E-mail 무단수집 거부</a>
+                    <a href="#">제3자 제공 동의</a>
+                    <a href="#">고객센터</a>
+                </div>
+                <div class="pc-footer__companyinfo">
+                    주식회사 케빈앤컴퍼니 <span class="space-line"></span>
+                    대표이사 : 임경환<br>
+                    주소 : 서울시 강남구 논현로 703, DI빌딩 5층<br>
+                    사업자등록번호 : 123-12-12345 <span class="space-line"></span>
+                    통신판매업 : 서울 00-0123<br>
+                    전화번호 : <a href="tel:02-1234-5678">02-1234-5678</a> <span class="space-line"></span>
+                    e-mail : test@kevinncompany.com<br><br>
+                    © KEVIN & COMPANY ALL RIGHT RESERVED.
+                </div>
+            </div>
+        </footer>
+    </div> 
+
+    <script src="../assets/js/function.js"></script>
+    <script src="../assets/js/pcnav.js"></script>
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>메인</title>
+    <link rel="stylesheet" href="../assets/css/common.css">
+    <link rel="stylesheet" href="../assets/css/pc.css">
+</head>
+
+<body>
+    <div class="app-wrap">
+        <header class="pc-header">
+            <div class="pc-header__top">
+                <ul class="pc-header__auth">
+                    <li><a href="login.html">로그인</a></li>
+                    <li><a href="signup.html">회원가입</a></li>
+                    <li><span>작곡가님 환영합니다</span></li>
+                    <li><a href="#">로그아웃</a></li>
+                </ul>    
+            </div>
+            <div class="pc-header__bottom">
+                <div class="pc-header__logo">
+                    <h1>ORFEO</h1>
+                </div>   
+                <nav class="pc-navbar">
+                    <ul class="pc-navbar__menu">
+                        <li class="pc-navbar__item">
+                            <a href="main.html" class="pc-navbar__link">
+                                <span class="pc-navbar__title">홈</span>
+                            </a>
+                        </li>
+                        <li class="pc-navbar__item" data-menu="menu-1">
+                            <div class="pc-navbar__link">
+                                <span class="pc-navbar__title">카테고리</span>
+                            </div>
+                            <div class="pc-navbar__subwrapper" id="menu-1">
+                                <ul class="pc-navbar__submenu">
+                                    <li class="pc-navbar__subitem">
+                                        <a href="ctgr_composer.html" class="pc-navbar__sublink">작곡가</a>                                    
+                                    </li>
+                                    <li class="pc-navbar__subitem">
+                                        <a href="ctgr_conductor.html" class="pc-navbar__sublink">지휘자</a>                                    
+                                    </li>
+                                    <li class="pc-navbar__subitem">
+                                        <a href="ctgr_orchestra.html" class="pc-navbar__sublink">오케스트라</a>
+                                    </li>
+                                    <li class="pc-navbar__subitem">
+                                        <a href="ctgr_artist.html" class="pc-navbar__sublink">아티스트</a>
+                                    </li>
+                                    <li class="pc-navbar__subitem">
+                                        <a href="ctgr_age.html" class="pc-navbar__sublink">시대</a>
+                                    </li>
+                                    <li class="pc-navbar__subitem">
+                                        <a href="ctgr_country.html" class="pc-navbar__sublink">국가</a>
+                                    </li>
+                                    <li class="pc-navbar__subitem">
+                                        <a href="ctgr_theater.html" class="pc-navbar__sublink">극장</a>
+                                    </li>
+                                    <li class="pc-navbar__subitem">
+                                        <a href="ctgr_genre.html" class="pc-navbar__sublink">장르</a>
+                                    </li>
+                                </ul>    
+                            </div>                
+                        </li>
+                        <li class="pc-navbar__item">
+                            <a href="article_list.html" class="pc-navbar__link">
+                                <span class="pc-navbar__title">읽을거리</span>                            
+                            </a>
+                        </li>
+                        <li class="pc-navbar__item">
+                            <a href="menu_my.html" class="pc-navbar__link">
+                                <span class="pc-navbar__title">MY</span>
+                            </a>
+                        </li>
+                        <li class="pc-navbar__item">
+                            <a href="menu_cscenter.html" class="pc-navbar__link">
+                                <span class="pc-navbar__title">고객센터</span>
+                            </a>
+                        </li>
+                    </ul>    
+                </nav>
+                <div id="header-search" class="pc-header__search">
+                    <div class="search-button">
+                        <a href="#" class="search-toggle" data-selector="#header-search"><i class="icon search"></i></a>
+                    </div>
+                    
+                    <div class="search-form">
+                        <div class="search-form__content">
+                            <div class="field-group">
+                                <label for="search-text" class="field-group__label field-group__label--blind">공연아카이브 검색</label>
+                                <div class="field-group__cont">
+                                    <input id="search" type="text" name="search-text" class="field-group__input" placeholder="공연, 영상, 아티스트 등 검색">
+                                    <button type="submit"><i class="icon search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <main class="views-wrap">
+            <section class="section section--expansion">
+                <div class="section__header px5">
+                    <h2 class="section__title">금주의 추천 영상</h2>
+                </div>
+                <div class="section__inner">
+                    <div class="category-list5 mt4">
+                        <div class="category-list5__group">
+                            <ul class="category-list5__itemlist">
+                                <li class="category-list5__item">
+                                    <a href="#" class="category-list5__link">
+                                        <div class="category-list5__image">
+                                            <img src="../assets/img/main_recommend01.jpg" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="category-list5__item">
+                                    <a href="#" class="category-list5__link">
+                                        <div class="category-list5__image">
+                                            <img src="../assets/img/main_recommend02.jpg" alt="">
+                                        </div> 
+                                    </a>
+                                </li>
+                                <li class="category-list5__item">
+                                    <a href="#" class="category-list5__link">
+                                        <div class="category-list5__image">
+                                            <img src="../assets/img/main_recommend01.jpg" alt="">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="category-list5__item">
+                                    <a href="#" class="category-list5__link">
+                                        <div class="category-list5__image">
+                                            <img src="../assets/img/main_recommend02.jpg" alt="">
+                                        </div> 
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--expansion mt15">
+                <div class="section__header px5">
+                    <h2 class="section__title">큐레이션</h2>
+                    <a href="curation.html" class="textbtn">전체보기<i class="icon arrow-right"></i></a>
+                </div>
+                <div class="section__inner">
+                    <div class="category-list3 category-list3--landscape mt4">
+                        <div class="category-list3__group">
+                            <ul class="category-list3__itemlist">
+                                <li class="category-list3__item">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="../assets/img/curation_img01.jpg" alt="쇼스타코비치 피아노 협주곡 1번">
+                                        </div>
+                                        <div class="category-list3__info" style="background: linear-gradient(0deg, rgba(117,34,95,1) 0%, rgba(117,34,95,0) 70%);">
+                                            <span class="category-list3__title">쇼스타코비치 피아노 협주곡 1번</span>
+                                        </div> 
+                                    </a>
+                                </li>
+                                <li class="category-list3__item">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="../assets/img/curation_img02.jpg" alt="키릴 페트렌코의 리에파야 음악회">
+                                        </div>
+                                        <div class="category-list3__info" style="background: linear-gradient(0deg, rgba(34,34,34,1) 0%, rgba(34,34,34,0) 70%);">
+                                            <span class="category-list3__title">키릴 페트렌코의 리에파야 음악회</span>
+                                        </div> 
+                                    </a>
+                                </li>
+                                <li class="category-list3__item">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="../assets/img/curation_img03.jpg" alt="징글 베이스 록">
+                                        </div>
+                                        <div class="category-list3__info" style="background: linear-gradient(0deg, rgba(65,36,128,1) 0%, rgba(65,36,128,0) 70%);">
+                                            <span class="category-list3__title">징글 베이스 록</span>
+                                        </div> 
+                                    </a>
+                                </li>
+                                <li class="category-list3__item">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="../assets/img/curation_img04.jpg" alt="이반 피셔의 말러교향곡 1번">
+                                        </div>
+                                        <div class="category-list3__info" style="background: linear-gradient(0deg, rgba(96,30,17,1) 0%, rgba(96,30,17,0) 70%);">
+                                            <span class="category-list3__title">이반 피셔의 말러교향곡 1번</span>
+                                        </div> 
+                                    </a>
+                                </li>
+                                <li class="category-list3__item">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="../assets/img/curation_img05.jpg" alt="이고르 스트라빈스키의 작품들">
+                                        </div>
+                                        <div class="category-list3__info" style="background: linear-gradient(0deg, rgba(158,74,66,1) 0%, rgba(158,74,66,0) 70%);">
+                                            <span class="category-list3__title">이고르 스트라빈스키의 작품들</span>
+                                        </div> 
+                                    </a>
+                                </li>
+                                <li class="category-list3__item">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="../assets/img/curation_img06.jpg" alt="헤르베르트 폰 카라얀의 작품들">
+                                        </div>
+                                        <div class="category-list3__info" style="background: linear-gradient(0deg, rgba(79,91,68,1) 0%, rgba(79,91,68,0) 70%);">
+                                            <span class="category-list3__title">헤르베르트 폰 카라얀의 작품들</span>
+                                        </div> 
+                                    </a>
+                                </li>
+                                <li class="category-list3__item">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="../assets/img/curation_img07.jpg" alt="프랑수아 자비에르로트와 이자벨 파우스트">
+                                        </div>
+                                        <div class="category-list3__info" style="background: linear-gradient(0deg, rgba(148,76,50,1) 0%, rgba(148,76,50,0) 70%);">
+                                            <span class="category-list3__title">프랑수아 자비에르로트와 이자벨 파우스트</span>
+                                        </div> 
+                                    </a>
+                                </li>
+                                <li class="category-list3__item">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="../assets/img/curation_img08.jpg" alt="쇼스타코비치 피아노 협주곡 1번">
+                                        </div>
+                                        <div class="category-list3__info" style="background: linear-gradient(0deg, rgba(198,144,0,1) 0%, rgba(198,144,0,0) 70%);">
+                                            <span class="category-list3__title">쇼스타코비치 피아노 협주곡 1번</span>
+                                        </div> 
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section--expansion mt15">
+                <div class="section__header px5">
+                    <h2 class="section__title">공연 아카이브</h2>
+                    <a href="archive.html" class="textbtn">23개 전체보기<i class="icon arrow-right"></i></a>
+                </div>
+                <div class="section__inner">
+                    <div class="category-list6 category-list6--landscape mt4">
+                        <div class="category-list6__group">
+                            <ul class="category-list6__itemlist">
+                                <li class="category-list6__item">
+                                    <a href="view_video.html" class="category-list6__link">
+                                        <div class="category-list6__image-wrapper">
+                                            <div class="category-list6__image">
+                                                <img src="../assets/img/view.jpg" alt="">        
+                                            </div>
+                                            <i class="icon play"></i>
+                                        </div>
+                                        <div class="category-list6__info">
+                                            <div class="chips">
+                                                <span class="chips__item chips__item--rounded">콘서트</span>
+                                                <span class="chips__date">2022년 8월 17일</span>
+                                            </div>
+                                            <span class="category-list6__title">우크라이나 청소년 심포니 오케스트라와 독일연방 청소년 오케스트라</span>
+                                        </div>                                        
+                                    </a>
+                                </li>
+                                <li class="category-list6__item">
+                                    <a href="view_video.html" class="category-list6__link">
+                                        <div class="category-list6__image-wrapper">
+                                            <div class="category-list6__image">
+                                                <img src="../assets/img/view02.jpg" alt="">        
+                                            </div>
+                                            <i class="icon play"></i>
+                                        </div>
+                                        <div class="category-list6__info">
+                                            <div class="chips">
+                                                <span class="chips__item chips__item--rounded">페스티벌</span>
+                                                <span class="chips__date">2022년 8월 17일</span>
+                                            </div>
+                                            <span class="category-list6__title">쇼스타코비치 피아노 협주곡 1번</span>
+                                        </div>                                        
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>                        
+                </div>
+            </section>
+
+            <section class="section section--expansion mt15">
+                <div class="section__header px5">
+                    <h2 class="section__title">극장 상영작</h2>
+                </div>
+                <div class="section__inner">
+                    <div class="category-list3 category-list3--landscape mt4">
+                        <div class="category-list3__group">
+                            <ul class="category-list3__itemlist">
+                                <li class="category-list3__item">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="../assets/img/main_theaters01.jpg" alt="쇼스타코비치 피아노 협주곡 1번">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="category-list3__item">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="../assets/img/main_theaters02.jpg" alt="키릴 페트렌코의 리에파야 음악회">
+                                        </div> 
+                                    </a>
+                                </li>
+                                <li class="category-list3__item">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="../assets/img/main_theaters03.jpg" alt="징글 베이스 록">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="category-list3__item">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="../assets/img/main_theaters04.jpg" alt="이반 피셔의 말러교향곡 1번">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="category-list3__item">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="../assets/img/main_theaters01.jpg" alt="쇼스타코비치 피아노 협주곡 1번">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="category-list3__item">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="../assets/img/main_theaters02.jpg" alt="키릴 페트렌코의 리에파야 음악회">
+                                        </div> 
+                                    </a>
+                                </li>
+                                <li class="category-list3__item">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="../assets/img/main_theaters03.jpg" alt="징글 베이스 록">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="category-list3__item">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="../assets/img/main_theaters04.jpg" alt="이반 피셔의 말러교향곡 1번">
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>                                        
+                </div>
+            </section>
+
+            <section class="section section--expansion mt15">
+                <div class="section__header px5">
+                    <h2 class="section__title">최근 시청기록</h2>
+                </div>
+                <div class="section__inner">
+                    <div class="category-list6 category-list6--landscape mt4">
+                        <div class="category-list6__group">
+                            <ul class="category-list6__itemlist">
+                                <li class="category-list6__item">
+                                    <a href="view_video.html" class="category-list6__link">
+                                        <div class="category-list6__image-wrapper">
+                                            <div class="category-list6__image">
+                                                <img src="../assets/img/view.jpg" alt="">        
+                                            </div>
+                                            <i class="icon play"></i>
+                                        </div>
+                                        <progress class="progressbar" value="30" min="0" max="100"></progress>
+                                        <div class="category-list6__info">
+                                            <div class="chips">
+                                                <span class="chips__item chips__item--rounded">콘서트</span>
+                                                <span class="chips__date">2022년 8월 17일</span>
+                                            </div>
+                                            <span class="category-list6__title">우크라이나 청소년 심포니 오케스트라와 독일연방 청소년 오케스트라</span>
+                                        </div>                                        
+                                    </a>
+                                </li>
+                                <li class="category-list6__item">
+                                    <a href="view_video.html" class="category-list6__link">
+                                        <div class="category-list6__image-wrapper">
+                                            <div class="category-list6__image">
+                                                <img src="../assets/img/view02.jpg" alt="">        
+                                            </div>
+                                            <i class="icon play"></i>
+                                        </div>
+                                        <progress class="progressbar" value="30" min="0" max="100"></progress>
+                                        <div class="category-list6__info">
+                                            <div class="chips">
+                                                <span class="chips__item chips__item--rounded">페스티벌</span>
+                                                <span class="chips__date">2022년 8월 17일</span>
+                                            </div>
+                                            <span class="category-list6__title">쇼스타코비치 피아노 협주곡 1번</span>
+                                        </div>                                        
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>                        
+                </div>
+            </section>
+
+            <section class="section section--expansion mt15">
+                <div class="section__header px5">
+                    <h2 class="section__title">라이브 상영관</h2>
+                </div>
+                <div class="section__inner">
+                    <div class="category-list6 category-list6--landscape mt4">
+                        <div class="category-list6__group">
+                            <ul class="category-list6__itemlist">
+                                <li class="category-list6__item">
+                                    <a href="view_video.html" class="category-list6__link">
+                                        <div class="category-list6__image-wrapper">
+                                            <div class="category-list6__image">
+                                                <img src="../assets/img/view.jpg" alt="">        
+                                            </div>
+                                            <i class="icon play"></i>
+                                        </div>
+                                        <progress class="progressbar" value="30" min="0" max="100"></progress>
+                                        <div class="category-list6__info">
+                                            <div class="chips">
+                                                <span class="chips__item chips__item--rounded">콘서트</span>
+                                                <span class="chips__date">2022년 8월 17일</span>
+                                            </div>
+                                            <span class="category-list6__title">우크라이나 청소년 심포니 오케스트라와 독일연방 청소년 오케스트라</span>
+                                        </div>                                        
+                                    </a>
+                                </li>
+                                <li class="category-list6__item">
+                                    <a href="view_video.html" class="category-list6__link">
+                                        <div class="category-list6__image-wrapper">
+                                            <div class="category-list6__image">
+                                                <img src="../assets/img/view02.jpg" alt="">        
+                                            </div>
+                                            <i class="icon play"></i>
+                                        </div>
+                                        <progress class="progressbar" value="30" min="0" max="100"></progress>
+                                        <div class="category-list6__info">
+                                            <div class="chips">
+                                                <span class="chips__item chips__item--rounded">페스티벌</span>
+                                                <span class="chips__date">2022년 8월 17일</span>
+                                            </div>
+                                            <span class="category-list6__title">쇼스타코비치 피아노 협주곡 1번</span>
+                                        </div>                                        
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>                        
+                </div>
+            </section>
+        </main>
+
+        <footer class="pc-footer">
+            <div class="pc-footer__inner">
+                <div class="pc-footer__menu">
+                    <a href="#">이용약관</a>
+                    <a href="#">유료이용약관</a>
+                    <a href="#">개인정보 취급</a>
+                    <a href="#">E-mail 무단수집 거부</a>
+                    <a href="#">제3자 제공 동의</a>
+                    <a href="#">고객센터</a>
+                </div>
+                <div class="pc-footer__companyinfo">
+                    주식회사 케빈앤컴퍼니 <span class="space-line"></span>
+                    대표이사 : 임경환<br>
+                    주소 : 서울시 강남구 논현로 703, DI빌딩 5층<br>
+                    사업자등록번호 : 123-12-12345 <span class="space-line"></span>
+                    통신판매업 : 서울 00-0123<br>
+                    전화번호 : <a href="tel:02-1234-5678">02-1234-5678</a> <span class="space-line"></span>
+                    e-mail : test@kevinncompany.com<br><br>
+                    © KEVIN & COMPANY ALL RIGHT RESERVED.
+                </div>
+            </div>
+        </footer>
+    </div> 
+
+    <script src="../assets/js/function.js"></script>
+    <script src="../assets/js/pcnav.js"></script>
+</body>
+</html>
