@@ -402,38 +402,12 @@
     .category-list3__itemlist {
       display: flex;
       justify-content: space-between;
-      padding-bottom: 1.2rem;
+      -webkit-overflow-scrolling: auto;
+      -ms-overflow-style: auto; 
+      scrollbar-width: auto;
 
       &::-webkit-scrollbar {
         display: block;
-        height: 0.6rem;        
-      }
-      
-      &::-webkit-scrollbar-track {
-        background-color: #2c2b2d;
-        border-radius: 0.6rem;
-      }
-      
-      &::-webkit-scrollbar-thumb {
-        height: 0.6rem;
-        border-radius: 0.6rem;
-        background-color: #4b494c;
-      }
-      
-      &::-webkit-scrollbar-thumb:hover {
-        background-color: $color-primary;
-      }
-      
-      &::-webkit-scrollbar:vertical {
-        display: none;
-      }
-
-      &::before {
-        display: none;
-      }
-      
-      &::after {
-        display: none;
       }
     }
 
@@ -499,39 +473,6 @@
 // --- 메인 금주의 추천 영상 ------------------------------------------------------------------
 .category-list5 {
 
-  &__itemlist {
-    padding: 0;
-    padding-bottom: 1.2rem;     
-
-    &::-webkit-scrollbar {
-      display: block;
-      height: 0.6rem;     
-    }
-    
-    &::-webkit-scrollbar-track {
-      background-color: #2c2b2d;
-      border-radius: 0.6rem;
-    }
-    
-    &::-webkit-scrollbar-thumb {
-      height: 0.6rem;
-      border-radius: 0.6rem;
-      background-color: #4b494c;
-    }
-    
-    &::-webkit-scrollbar-thumb:hover {
-      background-color: $color-primary;
-    }
-    
-    &::-webkit-scrollbar:vertical {
-      display: none;
-    }
-
-    &::after {
-      display: none;
-    }
-  }
-
   &__item {
     max-width: 334px;
     border-radius: 16px;
@@ -541,6 +482,10 @@
 // --- 메인 아카이브, 시청기록, 라이브 상영관 ------------------------------------------------------------------
 .category-list6 {
 
+  &__itemlist {
+    justify-content: flex-start;
+  }
+
   &__item {
     border-radius: 16px;
     max-width: 334px;
@@ -549,43 +494,6 @@
   &__info { 
     justify-content: flex-start;
     min-height: 102px;
-  }
-
-  &--landscape {
-    .category-list6__itemlist {
-      display: flex;
-      justify-content: flex-start;
-      padding: 0;
-      padding-bottom: 1.2rem;     
-
-      &::-webkit-scrollbar {
-        display: block;
-        height: 0.6rem;        
-      }
-      
-      &::-webkit-scrollbar-track {
-        background-color: #2c2b2d;
-        border-radius: 0.6rem;
-      }
-      
-      &::-webkit-scrollbar-thumb {
-        height: 0.6rem;
-        border-radius: 0.6rem;
-        background-color: #4b494c;
-      }
-      
-      &::-webkit-scrollbar-thumb:hover {
-        background-color: $color-primary;
-      }
-      
-      &::-webkit-scrollbar:vertical {
-        display: none;
-      }
-
-      &::after {
-        display: none;
-      }
-    }
   }
 }
 

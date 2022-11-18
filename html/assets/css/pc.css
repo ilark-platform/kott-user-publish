@@ -376,12 +376,32 @@
 .category-list3--landscape .category-list3__itemlist {
   display: flex;
   justify-content: space-between;
-  -webkit-overflow-scrolling: auto;
-  -ms-overflow-style: auto;
-  scrollbar-width: auto;
+  padding-bottom: 1.2rem;
 }
 .category-list3--landscape .category-list3__itemlist::-webkit-scrollbar {
   display: block;
+  height: 0.6rem;
+}
+.category-list3--landscape .category-list3__itemlist::-webkit-scrollbar-track {
+  background-color: #2c2b2d;
+  border-radius: 0.6rem;
+}
+.category-list3--landscape .category-list3__itemlist::-webkit-scrollbar-thumb {
+  height: 0.6rem;
+  border-radius: 0.6rem;
+  background-color: #4b494c;
+}
+.category-list3--landscape .category-list3__itemlist::-webkit-scrollbar-thumb:hover {
+  background-color: #caa973;
+}
+.category-list3--landscape .category-list3__itemlist::-webkit-scrollbar:vertical {
+  display: none;
+}
+.category-list3--landscape .category-list3__itemlist::before {
+  display: none;
+}
+.category-list3--landscape .category-list3__itemlist::after {
+  display: none;
 }
 .category-list3--landscape .category-list3__item {
   max-width: 196px;
@@ -441,14 +461,37 @@
   border-radius: 8px;
 }
 
+.category-list5__itemlist {
+  padding: 0;
+  padding-bottom: 1.2rem;
+}
+.category-list5__itemlist::-webkit-scrollbar {
+  display: block;
+  height: 0.6rem;
+}
+.category-list5__itemlist::-webkit-scrollbar-track {
+  background-color: #2c2b2d;
+  border-radius: 0.6rem;
+}
+.category-list5__itemlist::-webkit-scrollbar-thumb {
+  height: 0.6rem;
+  border-radius: 0.6rem;
+  background-color: #4b494c;
+}
+.category-list5__itemlist::-webkit-scrollbar-thumb:hover {
+  background-color: #caa973;
+}
+.category-list5__itemlist::-webkit-scrollbar:vertical {
+  display: none;
+}
+.category-list5__itemlist::after {
+  display: none;
+}
 .category-list5__item {
   max-width: 334px;
   border-radius: 16px;
 }
 
-.category-list6__itemlist {
-  justify-content: flex-start;
-}
 .category-list6__item {
   border-radius: 16px;
   max-width: 334px;
@@ -456,6 +499,34 @@
 .category-list6__info {
   justify-content: flex-start;
   min-height: 102px;
+}
+.category-list6--landscape .category-list6__itemlist {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+  padding-bottom: 1.2rem;
+}
+.category-list6--landscape .category-list6__itemlist::-webkit-scrollbar {
+  display: block;
+  height: 0.6rem;
+}
+.category-list6--landscape .category-list6__itemlist::-webkit-scrollbar-track {
+  background-color: #2c2b2d;
+  border-radius: 0.6rem;
+}
+.category-list6--landscape .category-list6__itemlist::-webkit-scrollbar-thumb {
+  height: 0.6rem;
+  border-radius: 0.6rem;
+  background-color: #4b494c;
+}
+.category-list6--landscape .category-list6__itemlist::-webkit-scrollbar-thumb:hover {
+  background-color: #caa973;
+}
+.category-list6--landscape .category-list6__itemlist::-webkit-scrollbar:vertical {
+  display: none;
+}
+.category-list6--landscape .category-list6__itemlist::after {
+  display: none;
 }
 
 /* ------------------------------ 추천 큐레이션 ------------------------------ */
