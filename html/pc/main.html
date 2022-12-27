@@ -5,12 +5,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
     <title>메인</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
     <link rel="stylesheet" href="../assets/css/common.css">
     <link rel="stylesheet" href="../assets/css/pc.css">
 </head>
 
 <body>
-    <div class="app-wrap">
+    <div id="app" class="app-wrap">
         <header class="pc-header">
             <div class="pc-header__top">
                 <ul class="pc-header__auth">
@@ -102,43 +103,51 @@
         </header>
         
         <main class="views-wrap">
-            <section class="section section--expansion">
+            <section class="section">
                 <div class="section__header">
                     <h2 class="section__title">금주의 추천 영상</h2>
                 </div>
-                <div class="section__inner">
+                <div class="section__inner section__inner--expansion">
                     <div class="category-list5 mt5">
-                        <div class="category-list5__group">
-                            <ul class="category-list5__itemlist">
-                                <li class="category-list5__item">
+                        <div class="category-list5__group recswiper-container">
+                            <ul class="category-list5__itemlist swiper-wrapper">
+                                <li class="category-list5__item swiper-slide">
                                     <a href="#" class="category-list5__link">
                                         <div class="category-list5__image">
-                                            <img src="../assets/img/main_recommend01.jpg" alt="">
+                                            <img src="https://moa-user.kevinncompany.com/upload/image/2022-10/14/2352481035.jpg" alt="카라얀 - 베토벤 교향곡 3번 &quot;영웅&quot;">
                                         </div>
                                     </a>
                                 </li>
-                                <li class="category-list5__item">
+                                <li class="category-list5__item swiper-slide">
                                     <a href="#" class="category-list5__link">
                                         <div class="category-list5__image">
-                                            <img src="../assets/img/main_recommend02.jpg" alt="">
+                                            <img src="https://moa-user.kevinncompany.com/upload/image/2022-11/17/2352601566.jpg" alt="마술피리">
                                         </div> 
                                     </a>
                                 </li>
-                                <li class="category-list5__item">
+                                <li class="category-list5__item swiper-slide">
                                     <a href="#" class="category-list5__link">
                                         <div class="category-list5__image">
-                                            <img src="../assets/img/main_recommend01.jpg" alt="">
+                                            <img src="https://moa-user.kevinncompany.com/upload/image/2022-11/01/2426465482.jpg" alt="모차르트주간 - 94초">
                                         </div>
                                     </a>
                                 </li>
-                                <li class="category-list5__item">
+                                <li class="category-list5__item swiper-slide">
                                     <a href="#" class="category-list5__link">
                                         <div class="category-list5__image">
-                                            <img src="../assets/img/main_recommend02.jpg" alt="">
+                                            <img src="https://moa-user.kevinncompany.com/upload/image/2022-11/01/2076504675.jpg" alt="잘츠부르크 페스티벌 : 서동시집, 바렌보임, 아르헤리치">
                                         </div> 
+                                    </a>
+                                </li>
+                                <li class="category-list5__item swiper-slide">
+                                    <a href="#" class="category-list5__link">
+                                        <div class="category-list5__image">
+                                            <img src="https://moa-user.kevinncompany.com/upload/image/2022-12/16/4374687147.jpg" alt="백조의 호수">
+                                        </div>
                                     </a>
                                 </li>
                             </ul>
+                            <div class="swiper-pagination"></div>
                         </div>
                     </div>
                 </div>
@@ -149,21 +158,61 @@
                     <h2 class="section__title">큐레이션</h2>
                     <a href="curation.html" class="textbtn">전체보기<i class="icon arrow-right"></i></a>
                 </div>
-                <div class="section__inner">
+                <div class="section__inner section__inner--mslide">
                     <div class="category-list3 category-list3--landscape mt5">
-                        <div class="category-list3__group">
-                            <ul class="category-list3__itemlist">
-                                <li class="category-list3__item">
+                        <div class="category-list3__group swiper-container">
+                            <ul class="category-list3__itemlist swiper-wrapper">
+                                <li class="category-list3__item swiper-slide">
                                     <a href="view_curation.html" class="category-list3__link">
                                         <div class="category-list3__image">
-                                            <img src="../assets/img/curation_img01.jpg" alt="쇼스타코비치 피아노 협주곡 1번">
+                                            <img src="https://moa-user.kevinncompany.com/upload/image/2022-11/02/2272377248.jpg" alt="쇼스타코비치 피아노 협주곡 1번">
                                         </div>
-                                        <div class="category-list3__info" style="background: linear-gradient(0deg, rgba(117,34,95,1) 0%, rgba(117,34,95,0) 70%);">
-                                            <span class="category-list3__title">쇼스타코비치 피아노 협주곡 1번</span>
-                                        </div> 
+                                        <div class="category-list3__info" style="background: linear-gradient(0deg, rgba(1, 107, 146, 0.7), rgba(1, 107, 146, 0));">
+                                            <span class="category-list3__title">세계 최대 호상 오페라 : 브레겐츠 페스티벌</span>
+                                        </div>
                                     </a>
                                 </li>
-                                <li class="category-list3__item">
+                                <li class="category-list3__item swiper-slide">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="https://moa-user.kevinncompany.com/upload/image/2022-11/02/4178363531.jpg" alt="징글 베이스 록">
+                                        </div>
+                                        <div class="category-list3__info" style="background: linear-gradient(0deg, rgba(11, 8, 35, 0.7), rgba(11, 8, 35, 0));">
+                                            <span class="category-list3__title">BBC 프롬스 모음</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="category-list3__item swiper-slide">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="https://moa-user.kevinncompany.com/upload/image/2022-11/21/4178501878.jpg" alt="이반 피셔의 말러교향곡 1번">
+                                        </div>
+                                        <div class="category-list3__info" style="background: linear-gradient(0deg, rgba(202, 169, 115, 0.7), rgba(202, 169, 115, 0));">
+                                            <span class="category-list3__title">MoA 추천 오페라 리스트</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="category-list3__item swiper-slide">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="https://moa-user.kevinncompany.com/upload/image/2022-12/16/2150608767.jpg" alt="이고르 스트라빈스키의 작품들">
+                                        </div>
+                                        <div class="category-list3__info" style="background: linear-gradient(0deg, rgba(229, 1, 18, 0.7), rgba(229, 1, 18, 0));">
+                                            <span class="category-list3__title">더 컴플리트 베토벤 피아노 소나타</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="category-list3__item swiper-slide">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="https://moa-user.kevinncompany.com/upload/image/2022-12/16/2272265815.jpg" alt="헤르베르트 폰 카라얀의 작품들">
+                                        </div>
+                                        <div class="category-list3__info" style="background: linear-gradient(0deg, rgba(44, 65, 46, 0.7), rgba(44, 65, 46, 0));">
+                                            <span class="category-list3__title">슈만 사이클</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="category-list3__item swiper-slide">
                                     <a href="view_curation.html" class="category-list3__link">
                                         <div class="category-list3__image">
                                             <img src="../assets/img/curation_img02.jpg" alt="키릴 페트렌코의 리에파야 음악회">
@@ -173,47 +222,7 @@
                                         </div> 
                                     </a>
                                 </li>
-                                <li class="category-list3__item">
-                                    <a href="view_curation.html" class="category-list3__link">
-                                        <div class="category-list3__image">
-                                            <img src="../assets/img/curation_img03.jpg" alt="징글 베이스 록">
-                                        </div>
-                                        <div class="category-list3__info" style="background: linear-gradient(0deg, rgba(65,36,128,1) 0%, rgba(65,36,128,0) 70%);">
-                                            <span class="category-list3__title">징글 베이스 록</span>
-                                        </div> 
-                                    </a>
-                                </li>
-                                <li class="category-list3__item">
-                                    <a href="view_curation.html" class="category-list3__link">
-                                        <div class="category-list3__image">
-                                            <img src="../assets/img/curation_img04.jpg" alt="이반 피셔의 말러교향곡 1번">
-                                        </div>
-                                        <div class="category-list3__info" style="background: linear-gradient(0deg, rgba(96,30,17,1) 0%, rgba(96,30,17,0) 70%);">
-                                            <span class="category-list3__title">이반 피셔의 말러교향곡 1번</span>
-                                        </div> 
-                                    </a>
-                                </li>
-                                <li class="category-list3__item">
-                                    <a href="view_curation.html" class="category-list3__link">
-                                        <div class="category-list3__image">
-                                            <img src="../assets/img/curation_img05.jpg" alt="이고르 스트라빈스키의 작품들">
-                                        </div>
-                                        <div class="category-list3__info" style="background: linear-gradient(0deg, rgba(158,74,66,1) 0%, rgba(158,74,66,0) 70%);">
-                                            <span class="category-list3__title">이고르 스트라빈스키의 작품들</span>
-                                        </div> 
-                                    </a>
-                                </li>
-                                <li class="category-list3__item">
-                                    <a href="view_curation.html" class="category-list3__link">
-                                        <div class="category-list3__image">
-                                            <img src="../assets/img/curation_img06.jpg" alt="헤르베르트 폰 카라얀의 작품들">
-                                        </div>
-                                        <div class="category-list3__info" style="background: linear-gradient(0deg, rgba(79,91,68,1) 0%, rgba(79,91,68,0) 70%);">
-                                            <span class="category-list3__title">헤르베르트 폰 카라얀의 작품들</span>
-                                        </div> 
-                                    </a>
-                                </li>
-                                <li class="category-list3__item">
+                                <li class="category-list3__item swiper-slide">
                                     <a href="view_curation.html" class="category-list3__link">
                                         <div class="category-list3__image">
                                             <img src="../assets/img/curation_img07.jpg" alt="프랑수아 자비에르로트와 이자벨 파우스트">
@@ -223,7 +232,7 @@
                                         </div> 
                                     </a>
                                 </li>
-                                <li class="category-list3__item">
+                                <li class="category-list3__item swiper-slide">
                                     <a href="view_curation.html" class="category-list3__link">
                                         <div class="category-list3__image">
                                             <img src="../assets/img/curation_img08.jpg" alt="쇼스타코비치 피아노 협주곡 1번">
@@ -234,7 +243,9 @@
                                     </a>
                                 </li>
                             </ul>
-                        </div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                        </div>                        
                     </div>
                 </div>
             </section>
@@ -243,71 +254,63 @@
                 <div class="section__header">
                     <h2 class="section__title">최근 시청기록</h2>
                 </div>
-                <div class="section__inner">
+                <div class="section__inner section__inner--mslide">
                     <div class="category-list6 category-list6--landscape mt5">
-                        <div class="category-list6__group">
-                            <ul class="category-list6__itemlist">
-                                <li class="category-list6__item">
+                        <div class="category-list6__group swiper-container">
+                            <ul class="category-list6__itemlist swiper-wrapper">
+                                <li class="category-list6__item swiper-slide">
                                     <a href="view_video.html" class="category-list6__link">
                                         <div class="category-list6__image-wrapper">
                                             <div class="category-list6__image">
-                                                <img src="../assets/img/view.jpg" alt="">        
+                                                <img src="https://moa-user.kevinncompany.com/upload/image/2022-10/14/2352481035.jpg" alt="">        
                                             </div>
                                             <i class="icon play"></i>
                                         </div>                                      
                                     </a>
                                 </li>
-                                <li class="category-list6__item">
+                                <li class="category-list6__item swiper-slide">
                                     <a href="view_video.html" class="category-list6__link">
                                         <div class="category-list6__image-wrapper">
                                             <div class="category-list6__image">
-                                                <img src="../assets/img/view02.jpg" alt="">        
+                                                <img src="https://moa-user.kevinncompany.com/upload/image/2022-10/31/2115646828.jpg" alt="">        
                                             </div>
                                             <i class="icon play"></i>
                                         </div>                                    
                                     </a>
                                 </li>
-                                <li class="category-list6__item">
+                                <li class="category-list6__item swiper-slide">
                                     <a href="view_video.html" class="category-list6__link">
                                         <div class="category-list6__image-wrapper">
                                             <div class="category-list6__image">
-                                                <img src="../assets/img/view.jpg" alt="">        
+                                                <img src="https://moa-user.kevinncompany.com/upload/image/2022-11/18/2071116370.jpg" alt="">        
                                             </div>
                                             <i class="icon play"></i>
                                         </div>                                      
                                     </a>
                                 </li>
-                                <li class="category-list6__item">
+                                <li class="category-list6__item swiper-slide">
                                     <a href="view_video.html" class="category-list6__link">
                                         <div class="category-list6__image-wrapper">
                                             <div class="category-list6__image">
-                                                <img src="../assets/img/view02.jpg" alt="">        
+                                                <img src="https://moa-user.kevinncompany.com/upload/image/2022-11/25/4185516411.jpg" alt="">        
                                             </div>
                                             <i class="icon play"></i>
                                         </div>                                    
                                     </a>
                                 </li>
-                                <li class="category-list6__item">
+                                <li class="category-list6__item swiper-slide">
                                     <a href="view_video.html" class="category-list6__link">
                                         <div class="category-list6__image-wrapper">
                                             <div class="category-list6__image">
-                                                <img src="../assets/img/view.jpg" alt="">        
+                                                <img src="https://moa-user.kevinncompany.com/upload/image/2022-11/01/2426465482.jpg" alt="">        
                                             </div>
                                             <i class="icon play"></i>
                                         </div>                                      
-                                    </a>
-                                </li>
-                                <li class="category-list6__item">
-                                    <a href="view_video.html" class="category-list6__link">
-                                        <div class="category-list6__image-wrapper">
-                                            <div class="category-list6__image">
-                                                <img src="../assets/img/view02.jpg" alt="">        
-                                            </div>
-                                            <i class="icon play"></i>
-                                        </div>                                    
                                     </a>
                                 </li>
                             </ul>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
                         </div>
                     </div>                        
                 </div>
@@ -318,31 +321,73 @@
                     <h2 class="section__title">아카이브</h2>
                     <a href="archive.html" class="textbtn">23개 전체보기<i class="icon arrow-right"></i></a>
                 </div>
-                <div class="section__inner">
+                <div class="section__inner section__inner--mslide">
                     <div class="category-list6 category-list6--landscape mt5">
-                        <div class="category-list6__group">
-                            <ul class="category-list6__itemlist">
-                                <li class="category-list6__item">
+                        <div class="category-list6__group swiper-container">
+                            <ul class="category-list6__itemlist swiper-wrapper">
+                                <li class="category-list6__item swiper-slide">
                                     <a href="view_video.html" class="category-list6__link">
                                         <div class="category-list6__image-wrapper">
                                             <div class="category-list6__image">
-                                                <img src="../assets/img/view.jpg" alt="">        
+                                                <img src="https://moa-user.kevinncompany.com/upload/image/2022-12/19/2317328308.jpg" alt="">        
                                             </div>
                                             <i class="icon play"></i>
                                         </div>                                     
                                     </a>
                                 </li>
-                                <li class="category-list6__item">
+                                <li class="category-list6__item swiper-slide">
                                     <a href="view_video.html" class="category-list6__link">
                                         <div class="category-list6__image-wrapper">
                                             <div class="category-list6__image">
-                                                <img src="../assets/img/view02.jpg" alt="">        
+                                                <img src="https://moa-user.kevinncompany.com/upload/image/2022-12/19/2272470587.jpg" alt="">        
+                                            </div>
+                                            <i class="icon play"></i>
+                                        </div>                                      
+                                    </a>
+                                </li>
+                                <li class="category-list6__item swiper-slide">
+                                    <a href="view_video.html" class="category-list6__link">
+                                        <div class="category-list6__image-wrapper">
+                                            <div class="category-list6__image">
+                                                <img src="https://moa-user.kevinncompany.com/upload/image/2022-12/19/4178721068.jpg" alt="">        
+                                            </div>
+                                            <i class="icon play"></i>
+                                        </div>                                      
+                                    </a>
+                                </li>
+                                <li class="category-list6__item swiper-slide">
+                                    <a href="view_video.html" class="category-list6__link">
+                                        <div class="category-list6__image-wrapper">
+                                            <div class="category-list6__image">
+                                                <img src="https://moa-user.kevinncompany.com/upload/image/2022-12/19/4265767527.jpg" alt="">        
+                                            </div>
+                                            <i class="icon play"></i>
+                                        </div>                                      
+                                    </a>
+                                </li>
+                                <li class="category-list6__item swiper-slide">
+                                    <a href="view_video.html" class="category-list6__link">
+                                        <div class="category-list6__image-wrapper">
+                                            <div class="category-list6__image">
+                                                <img src="https://moa-user.kevinncompany.com/upload/image/2022-12/19/2070567100.jpg" alt="">        
+                                            </div>
+                                            <i class="icon play"></i>
+                                        </div>                                      
+                                    </a>
+                                </li>
+                                <li class="category-list6__item swiper-slide">
+                                    <a href="view_video.html" class="category-list6__link">
+                                        <div class="category-list6__image-wrapper">
+                                            <div class="category-list6__image">
+                                                <img src="https://moa-user.kevinncompany.com/upload/image/2022-12/19/2345777105.jpg" alt="">        
                                             </div>
                                             <i class="icon play"></i>
                                         </div>                                      
                                     </a>
                                 </li>
                             </ul>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
                         </div>
                     </div>                        
                 </div>
@@ -352,11 +397,11 @@
                 <div class="section__header">
                     <h2 class="section__title">라이브 상영관</h2>
                 </div>
-                <div class="section__inner">
+                <div class="section__inner section__inner--mslide">
                     <div class="category-list6 category-list6--landscape mt5">
-                        <div class="category-list6__group">
-                            <ul class="category-list6__itemlist">
-                                <li class="category-list6__item">
+                        <div class="category-list6__group swiper-container">
+                            <ul class="category-list6__itemlist swiper-wrapper">
+                                <li class="category-list6__item swiper-slide">
                                     <a href="view_video.html" class="category-list6__link">
                                         <div class="category-list6__image-wrapper">
                                             <div class="category-list6__image">
@@ -366,7 +411,7 @@
                                         </div>                                     
                                     </a>
                                 </li>
-                                <li class="category-list6__item">
+                                <li class="category-list6__item swiper-slide">
                                     <a href="view_video.html" class="category-list6__link">
                                         <div class="category-list6__image-wrapper">
                                             <div class="category-list6__image">
@@ -377,6 +422,8 @@
                                     </a>
                                 </li>
                             </ul>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
                         </div>
                     </div>                        
                 </div>
@@ -386,60 +433,60 @@
                 <div class="section__header">
                     <h2 class="section__title">상영 예정작</h2>
                 </div>
-                <div class="section__inner">
+                <div class="section__inner section__inner--mslide">
                     <div class="category-list3 category-list3--landscape mt5">
-                        <div class="category-list3__group">
-                            <ul class="category-list3__itemlist">
-                                <li class="category-list3__item">
+                        <div class="category-list3__group swiper-container">
+                            <ul class="category-list3__itemlist swiper-wrapper">
+                                <li class="category-list3__item swiper-slide">
                                     <a href="view_curation.html" class="category-list3__link">
                                         <div class="category-list3__image">
-                                            <img src="../assets/img/main_theaters01.jpg" alt="쇼스타코비치 피아노 협주곡 1번">
+                                            <img src="https://moa-user.kevinncompany.com/upload/image/2022-12/26/2352260855.jpg" alt="쇼스타코비치 피아노 협주곡 1번">
                                         </div>
                                     </a>
                                 </li>
-                                <li class="category-list3__item">
+                                <li class="category-list3__item swiper-slide">
                                     <a href="view_curation.html" class="category-list3__link">
                                         <div class="category-list3__image">
-                                            <img src="../assets/img/main_theaters02.jpg" alt="키릴 페트렌코의 리에파야 음악회">
+                                            <img src="https://moa-user.kevinncompany.com/upload/image/2022-12/26/2076614537.jpg" alt="키릴 페트렌코의 리에파야 음악회">
                                         </div> 
                                     </a>
                                 </li>
-                                <li class="category-list3__item">
+                                <li class="category-list3__item swiper-slide">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="https://moa-user.kevinncompany.com/upload/image/2022-12/26/4338745305.jpg" alt="징글 베이스 록">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="category-list3__item swiper-slide">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="https://moa-user.kevinncompany.com/upload/image/2022-12/26/2352260855.jpg" alt="쇼스타코비치 피아노 협주곡 1번">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="category-list3__item swiper-slide">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="https://moa-user.kevinncompany.com/upload/image/2022-12/26/2076614537.jpg" alt="키릴 페트렌코의 리에파야 음악회">
+                                        </div> 
+                                    </a>
+                                </li>
+                                <li class="category-list3__item swiper-slide">
+                                    <a href="view_curation.html" class="category-list3__link">
+                                        <div class="category-list3__image">
+                                            <img src="https://moa-user.kevinncompany.com/upload/image/2022-12/26/4338745305.jpg" alt="징글 베이스 록">
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="category-list3__item swiper-slide">
                                     <a href="view_curation.html" class="category-list3__link">
                                         <div class="category-list3__image">
                                             <img src="../assets/img/main_theaters03.jpg" alt="징글 베이스 록">
                                         </div>
                                     </a>
                                 </li>
-                                <li class="category-list3__item">
-                                    <a href="view_curation.html" class="category-list3__link">
-                                        <div class="category-list3__image">
-                                            <img src="../assets/img/main_theaters04.jpg" alt="이반 피셔의 말러교향곡 1번">
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="category-list3__item">
-                                    <a href="view_curation.html" class="category-list3__link">
-                                        <div class="category-list3__image">
-                                            <img src="../assets/img/main_theaters01.jpg" alt="쇼스타코비치 피아노 협주곡 1번">
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="category-list3__item">
-                                    <a href="view_curation.html" class="category-list3__link">
-                                        <div class="category-list3__image">
-                                            <img src="../assets/img/main_theaters02.jpg" alt="키릴 페트렌코의 리에파야 음악회">
-                                        </div> 
-                                    </a>
-                                </li>
-                                <li class="category-list3__item">
-                                    <a href="view_curation.html" class="category-list3__link">
-                                        <div class="category-list3__image">
-                                            <img src="../assets/img/main_theaters03.jpg" alt="징글 베이스 록">
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="category-list3__item">
+                                <li class="category-list3__item swiper-slide">
                                     <a href="view_curation.html" class="category-list3__link">
                                         <div class="category-list3__image">
                                             <img src="../assets/img/main_theaters04.jpg" alt="이반 피셔의 말러교향곡 1번">
@@ -447,12 +494,12 @@
                                     </a>
                                 </li>
                             </ul>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
                         </div>
                     </div>                                        
                 </div>
-            </section>            
-
-            
+            </section>   
         </main>
 
         <footer class="pc-footer">
@@ -478,8 +525,37 @@
             </div>
         </footer>
     </div> 
-
+    
     <script src="../assets/js/function.js"></script>
     <script src="../assets/js/pcnav.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
+    <script>
+    let app = new Vue({
+        el: '#app',
+        mounted () {
+            const recSwiper = new Swiper('.recswiper-container', {
+                slidesPerView: 'auto',
+                spaceBetween: 20,
+                pagination: '.swiper-pagination',
+                paginationClickable: true,
+                autoplay: 4000,
+                loop: true,
+                observer: true,
+                observeParents: true,
+            })
+            const mainSwiper = new Swiper('.swiper-container', {
+                slidesPerView: 'auto',
+                spaceBetween: 20,
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                observer: true,
+                observeParents: true,
+            })
+        }
+    });
+    </script>
+
 </body>
 </html>

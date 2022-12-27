@@ -303,6 +303,18 @@
     &--sm {
       max-width: 460px;
     }
+
+    &--expansion {
+      max-width: 100%;
+      padding: 0 2rem;
+    }
+
+    &--mslide {
+      position: relative;
+      max-width: 1350px;
+      padding: 0 3.5rem;
+      overflow: hidden;
+    }
   }
 
   &__header {
@@ -332,7 +344,7 @@
   &__subject {
     position: relative;
     top: auto;
-    color: rgba($color-white, 0.6);
+    color: rgba($color-white, 0.5);
     margin-bottom: 1rem;
   }
 
@@ -345,6 +357,12 @@
   &__item {
     width: calc( 25% - 30px );
     border-bottom: none;
+  }
+
+  &__title {
+    width: 100%;
+    padding: 1rem 2rem;
+    color: rgba($color-white, 0.5);
   }
 }
 
@@ -379,7 +397,7 @@
 
 // --- 큐레이션, 극장 상영작 ------------------------------------------------------------------
 .category-list3 {
-
+  
   &__itemlist {
     display: inline-flex;
     flex-wrap: wrap;
@@ -399,11 +417,36 @@
 
   &--landscape {
 
+    .category-list3__group {
+      overflow: visible;
+
+      &::before {
+        content: '';
+        @include position(absolute, $top: 0, $left: -35px);
+        @include size($width: 35px, $height: 100%);
+        background-color: #121215;
+        z-index: 2;
+      }
+
+      &::after {
+        content: '';
+        @include position(absolute, $top: 0, $right: -35px);
+        @include size($width: 35px, $height: 100%);
+        background-color: #121215;
+        z-index: 2;
+      }
+    }   
+
     .category-list3__itemlist {
       display: flex;
-      justify-content: space-between;
-      padding-bottom: 1.2rem;
+      justify-content: flex-start;
+      overflow-x: visible;
+      scroll-snap-type: none;
+      scroll-behavior: auto;
+      gap: 0;   
+      -webkit-overflow-scrolling: auto;
 
+      /*
       &::-webkit-scrollbar {
         display: block;
         height: 0.6rem;        
@@ -427,6 +470,7 @@
       &::-webkit-scrollbar:vertical {
         display: none;
       }
+      */
 
       &::before {
         display: none;
@@ -501,8 +545,14 @@
 
   &__itemlist {
     padding: 0;
-    padding-bottom: 1.2rem;     
+    padding-bottom: 1.2rem;  
+    overflow-x: visible;
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+    gap: 0;   
+    -webkit-overflow-scrolling: auto;
 
+    /*
     &::-webkit-scrollbar {
       display: block;
       height: 0.6rem;     
@@ -526,14 +576,14 @@
     &::-webkit-scrollbar:vertical {
       display: none;
     }
-
+    */
     &::after {
       display: none;
     }
   }
 
   &__item {
-    max-width: 334px;
+    max-width: 588px;
     border-radius: 16px;
   }
 }
@@ -552,12 +602,38 @@
   }
 
   &--landscape {
+    
+    .category-list6__group {
+      overflow: visible;
+
+      &::before {
+        content: '';
+        @include position(absolute, $top: 0, $left: -35px);
+        @include size($width: 35px, $height: 100%);
+        background-color: #121215;
+        z-index: 2;
+      }
+
+      &::after {
+        content: '';
+        @include position(absolute, $top: 0, $right: -35px);
+        @include size($width: 35px, $height: 100%);
+        background-color: #121215;
+        z-index: 2;
+      }
+    }   
+
     .category-list6__itemlist {
       display: flex;
       justify-content: flex-start;
-      padding: 0;
-      padding-bottom: 1.2rem;     
+      padding: 0; 
+      overflow-x: visible;
+      scroll-snap-type: none;
+      scroll-behavior: auto;
+      gap: 0;   
+      -webkit-overflow-scrolling: auto;
 
+      /*
       &::-webkit-scrollbar {
         display: block;
         height: 0.6rem;        
@@ -581,12 +657,44 @@
       &::-webkit-scrollbar:vertical {
         display: none;
       }
+      */
 
       &::after {
         display: none;
       }
     }
   }
+}
+
+.section__inner .swiper-pagination {
+  bottom: -14px;
+}
+.section__inner .swiper-pagination .swiper-pagination-bullet {
+  background-color: #caa973;
+  transition: all 0.3s;
+}
+.section__inner .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 25px;
+  border-radius: 8px;
+}
+
+.section__inner .swiper-button-next,
+.section__inner .swiper-button-prev {
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+}
+
+.section__inner .swiper-button-next {
+  right: -30px;
+  background-image: icon(arrow-right);
+  @include size(30px, $height: 30px);
+}
+
+.section__inner .swiper-button-prev {
+  left: -30px;
+  background-image: icon(arrow-left);
+  @include size(30px, $height: 30px);
 }
 
 /* ------------------------------ 추천 큐레이션 ------------------------------ */
