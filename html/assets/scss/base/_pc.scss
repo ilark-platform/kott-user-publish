@@ -327,6 +327,11 @@
   }
 }
 
+.px0 {
+  padding-left: 0 !important; 
+  padding-right: 0 !important;
+}
+
 .flex-between-center {
   display: flex;
   justify-content: space-between;
@@ -583,7 +588,7 @@
   }
 
   &__item {
-    max-width: 588px;
+    max-width: 900px;
     border-radius: 16px;
   }
 }
@@ -695,6 +700,11 @@
   left: -30px;
   background-image: icon(arrow-left);
   @include size(30px, $height: 30px);
+}
+
+.section__inner .swiper-button-prev.swiper-button-disabled,
+.section__inner .swiper-button-next.swiper-button-disabled {
+  opacity: 0;
 }
 
 /* ------------------------------ 추천 큐레이션 ------------------------------ */

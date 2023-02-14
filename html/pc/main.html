@@ -103,11 +103,11 @@
         </header>
         
         <main class="views-wrap">
-            <section class="section">
+            <section class="section px0">
                 <div class="section__header">
                     <h2 class="section__title">금주의 추천 영상</h2>
                 </div>
-                <div class="section__inner section__inner--expansion">
+                <div class="section__inner section__inner--expansion px0">
                     <div class="category-list5 mt5">
                         <div class="category-list5__group recswiper-container">
                             <ul class="category-list5__itemlist swiper-wrapper">
@@ -537,6 +537,7 @@
         mounted () {
             const recSwiper = new Swiper('.recswiper-container', {
                 slidesPerView: 'auto',
+                centeredSlides: true,
                 spaceBetween: 20,
                 pagination: '.swiper-pagination',
                 paginationClickable: true,
