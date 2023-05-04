@@ -107,7 +107,7 @@
                 <div class="section__header">
                     <h2 class="section__title">금주의 추천 영상</h2>
                 </div>
-                <div class="section__inner section__inner--expansion px0">
+                <div class="section__inner"><!-- 230504 section__inner--expansion px0 클래스 제거 -->
                     <div class="category-list5 mt5">
                         <div class="category-list5__group recswiper-container">
                             <ul class="category-list5__itemlist swiper-wrapper">
@@ -149,6 +149,8 @@
                             </ul>
                             <div class="swiper-pagination"></div>
                         </div>
+                        <div class="recswiper-button-prev"></div>
+                        <div class="recswiper-button-next"></div>  
                     </div>
                 </div>
             </section>
@@ -536,11 +538,13 @@
         el: '#app',
         mounted () {
             const recSwiper = new Swiper('.recswiper-container', {
-                slidesPerView: 'auto',
-                centeredSlides: true,
+                slidesPerView: 1, //230504 slidesPerView 'auto' 에서 1 로 변경
+                centeredSlides: false, //230504 centeredSlides: 'true' 에서 'false' 로 변경
                 spaceBetween: 20,
                 pagination: '.swiper-pagination',
                 paginationClickable: true,
+                nextButton: '.recswiper-button-next', //230504 nextButton 추가
+                prevButton: '.recswiper-button-prev', //230504 prevButton 추가
                 autoplay: 4000,
                 loop: true,
                 observer: true,

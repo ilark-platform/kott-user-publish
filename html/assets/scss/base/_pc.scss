@@ -547,6 +547,7 @@
 
 // --- 메인 금주의 추천 영상 ------------------------------------------------------------------
 .category-list5 {
+  position: relative;
 
   &__itemlist {
     padding: 0;
@@ -588,8 +589,38 @@
   }
 
   &__item {
-    max-width: 900px;
+    /*max-width: 900px;*/
     border-radius: 16px;
+  }
+
+  
+  .recswiper-button-next,
+  .recswiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    width: 58px;
+    height: 58px;
+    background-size: contain;
+  }
+  
+  .recswiper-button-next {
+    right: 15px;
+    background-image: icon(arrow-right);
+    @include size(78px, $height: 78px);
+  }
+  
+  .recswiper-button-prev {
+    left: 15px;
+    background-image: icon(arrow-left);
+    @include size(78px, $height: 78px);
+  }
+  
+  .recswiper-button-prev.swiper-button-disabled,
+  .recswiper-button-next.swiper-button-disabled {
+    opacity: 0;
   }
 }
 
@@ -685,21 +716,22 @@
 
 .section__inner .swiper-button-next,
 .section__inner .swiper-button-prev {
-  width: 30px;
-  height: 30px;
-  margin-top: -15px;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  background-size: 46px 46px;
 }
 
 .section__inner .swiper-button-next {
-  right: -30px;
+  right: -42px;
   background-image: icon(arrow-right);
-  @include size(30px, $height: 30px);
+  @include size(40px, $height: 40px);
 }
 
 .section__inner .swiper-button-prev {
-  left: -30px;
+  left: -42px;
   background-image: icon(arrow-left);
-  @include size(30px, $height: 30px);
+  @include size(40px, $height: 40px);
 }
 
 .section__inner .swiper-button-prev.swiper-button-disabled,
